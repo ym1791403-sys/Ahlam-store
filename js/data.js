@@ -283,25 +283,25 @@ const STORE_DATA = {
 
   reviews: [
     {
-      author: "Nadine E.",
-      location: "Dubai, UAE",
+      author: "نادين ع.",
+      location: "الزمالك، القاهرة",
       rating: 5,
-      commentEn: "The Cyber Baguette in Lilac is unmatched. People stop me on streets to ask where it's from!",
-      commentAr: "حقيبة السايبر باجيت بلون الليلك خيالية تماماً! الناس في الشارع والمطاعم بتسألني جايباها منين!"
+      commentEn: "The bag quality is unmatched. Truly luxurious leather!",
+      commentAr: "الشنطة على الطبيعة تحفة وخامتها فاخرة جداً! كل ما أنزل بيها في مكان صحابي بيسألوني جايباها منين!"
     },
     {
-      author: "Lina K.",
-      location: "Riyadh, KSA",
+      author: "مريم ح.",
+      location: "الشيخ زايد، الجيزة",
       rating: 5,
-      commentEn: "The quality of the Italian calfskin on the Prism Luna is equal to houses 4x the price.",
-      commentAr: "جودة الجلد الإيطالي في حقيبة لونا المنشورية تضاهي براندات عالمية بأربعة أضعاف السعر. فخر حقيقي!"
+      commentEn: "The leather quality equals international luxury houses.",
+      commentAr: "جودة الجلد الطبيعي والتقفيل هنا يضاهي براندات عالمية بأضعاف السعر. فخر إنه براند مصري بالمستوى ده!"
     },
     {
-      author: "Salma M.",
-      location: "Cairo, Egypt",
+      author: "سلمى م.",
+      location: "سموحة، الإسكندرية",
       rating: 5,
-      commentEn: "The Quilted Monolith is my everyday luxury armor. Fits my iPad, cosmetics, and still looks sculptural.",
-      commentAr: "حقيبة مونوليث أصبحت رفيقتي اليومية الدائمة، شيك جداً وبتشيل الآيباد والميك أب ومحافظة على هيبتها."
+      commentEn: "The Quilted Monolith is my everyday luxury companion.",
+      commentAr: "حقيبة مونوليث أصبحت رفيقتي اليومية الدائمة، شيك جداً وبتشيل الآيباد والميك أب ومحافظة على هيبتها وجودتها."
     }
   ]
 };

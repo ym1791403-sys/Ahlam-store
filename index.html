@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="gold" class="scroll-smooth">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com https://fonts.gstatic.com https://images.unsplash.com; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com;" />
-  <title>Ahlam Store | Contemporary Avant-Garde Bags</title>
+  <title>متجر أحلام | Ahlam Store - حقائب نسائية راقية</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -36,66 +35,62 @@
   <!-- ============================================================ -->
   <!-- NAVIGATION BAR                                               -->
   <!-- ============================================================ -->
-  <header class="sticky top-0 z-50 backdrop-blur-2xl bg-[#070709]/85 border-b border-white/[0.08] transition-all duration-300">
+  <header class="sticky top-0 z-50 backdrop-blur-2xl bg-[#070709]/90 border-b border-white/[0.08] transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Minimalist Luxury Logo -->
       <a href="#" class="flex flex-col items-start group">
-        <div class="flex items-center gap-2.5">
+        <div class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#c5a059] shadow-[0_0_10px_rgba(197,160,89,0.8)]"></span>
-          <span class="font-editorial text-2xl sm:text-3xl font-extrabold tracking-[0.16em] text-white group-hover:text-[#dfba89] transition-colors">AHLAM</span>
+          <span class="font-editorial text-2xl sm:text-3xl font-extrabold text-white group-hover:text-[#dfba89] transition-colors">AHLAM</span>
+          <span class="text-xs uppercase tracking-widest text-[#c5a059] font-semibold ms-1">STORE</span>
         </div>
-        <span class="text-[9px] tracking-[0.35em] text-[#c5a059] font-mono uppercase ps-4.5 -mt-0.5">HAUTE MAROQUINERIE</span>
+        <span class="text-[10px] tracking-widest text-gray-400 font-mono -mt-0.5">براند مصري فاخر</span>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-9 text-xs uppercase tracking-widest font-semibold">
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
         <a href="#lookbook" class="text-gray-300 hover:text-[#dfba89] transition-colors flex items-center gap-1.5" data-i18n="navLookbook">منسق الإطلالات</a>
         <a href="#capacity" class="text-gray-300 hover:text-[#dfba89] transition-colors" data-i18n="navCapacity">ماذا تكفي حقيبتك؟</a>
         <a href="#collection" class="text-gray-300 hover:text-[#dfba89] transition-colors" data-i18n="navCollection">المجموعة الحصرية</a>
-        <a href="#bespoke" class="text-gray-300 hover:text-[#dfba89] transition-colors" data-i18n="navCustomizer">استوديو النقش</a>
-        <a href="#reviews" class="text-gray-300 hover:text-[#dfba89] transition-colors" data-i18n="navReviews">آراء النجمات</a>
+        <a href="#reviews" class="text-gray-300 hover:text-[#dfba89] transition-colors" data-i18n="navReviews">آراء عميلاتنا</a>
       </nav>
 
-      <!-- Utility Controls (Currency, Lang, Cart) - Color switcher removed as requested -->
+      <!-- Utility Controls (Cart & Mobile Menu) -->
       <div class="flex items-center gap-3 sm:gap-4">
         
-        <!-- Currency Selector -->
-        <div class="relative group">
-          <select onchange="switchCurrency(this.value)" class="bg-white/[0.04] border border-white/10 hover:border-[#c5a059]/40 text-xs text-gray-200 py-1.5 px-3 rounded-lg focus:outline-none focus:border-[#c5a059] cursor-pointer transition-colors">
-            <option value="SAR" class="bg-[#101015]">SAR (ر.س)</option>
-            <option value="USD" class="bg-[#101015]">USD ($)</option>
-            <option value="AED" class="bg-[#101015]">AED (د.إ)</option>
-            <option value="EGP" class="bg-[#101015]">EGP (ج.م)</option>
-          </select>
-        </div>
-
-        <!-- Language Switcher -->
-        <button onclick="switchLanguage(AppState.lang === 'ar' ? 'en' : 'ar')" class="text-xs font-bold px-3 py-1.5 rounded-lg border border-white/10 hover:border-[#c5a059]/40 bg-white/[0.04] hover:bg-white/[0.08] text-gray-200 transition-all">
-          <span id="lang-indicator">EN</span>
-        </button>
+        <!-- WhatsApp Quick Link -->
+        <a href="https://wa.me/201000000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D9%82%D8%A7%D8%A6%D8%A8%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A3%D8%AD%D9%84%D8%A7%D9%85" 
+           target="_blank" rel="noopener noreferrer"
+           class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-950/40 border border-emerald-600/40 text-emerald-400 hover:bg-emerald-900/40 text-xs font-bold transition-all" title="تواصل مباشر عبر واتساب">
+          <span>💬</span>
+          <span>واتساب</span>
+        </a>
 
         <!-- Luxury Shopping Bag Button -->
-        <button id="cart-button" onclick="openCartDrawer()" class="relative p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c5a059]/50 transition-all flex items-center justify-center group">
+        <button id="cart-button" onclick="openCartDrawer()" class="relative p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#c5a059]/50 transition-all flex items-center justify-center group" title="حقيبة الطلبات">
           <span class="text-lg group-hover:scale-110 transition-transform">🛍️</span>
           <span id="cart-count-badge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-gold-gradient text-black text-[11px] font-extrabold flex items-center justify-center shadow-md hidden">0</span>
         </button>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-300 hover:text-white">
-          <span class="text-xl">☰</span>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-300 hover:text-white" aria-label="القائمة">
+          <span class="text-2xl">☰</span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-[#0c0c10] border-b border-white/10">
-      <div class="flex flex-col gap-4 text-sm font-medium">
-        <a href="#lookbook" class="text-gray-300 hover:text-white" data-i18n="navLookbook">منسق الإطلالات</a>
-        <a href="#capacity" class="text-gray-300 hover:text-white" data-i18n="navCapacity">ماذا تكفي حقيبتك؟</a>
-        <a href="#collection" class="text-gray-300 hover:text-white" data-i18n="navCollection">المجموعة الحصرية</a>
-        <a href="#bespoke" class="text-gray-300 hover:text-white" data-i18n="navCustomizer">استوديو النقش</a>
-        <a href="#reviews" class="text-gray-300 hover:text-white" data-i18n="navReviews">آراء النجمات</a>
+    <div id="mobile-menu" class="hidden lg:hidden px-6 pt-3 pb-6 bg-[#0c0c10] border-b border-white/10 space-y-4">
+      <div class="flex flex-col gap-3 text-sm font-semibold">
+        <a href="#lookbook" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#dfba89] py-1" data-i18n="navLookbook">منسق الإطلالات</a>
+        <a href="#capacity" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#dfba89] py-1" data-i18n="navCapacity">ماذا تكفي حقيبتك؟</a>
+        <a href="#collection" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#dfba89] py-1" data-i18n="navCollection">المجموعة الحصرية</a>
+        <a href="#reviews" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#dfba89] py-1" data-i18n="navReviews">آراء عميلاتنا</a>
+        <a href="https://wa.me/201000000000" target="_blank" class="flex items-center gap-2 text-emerald-400 font-bold py-1">
+          <span>💬</span>
+          <span>تواصل سريع عبر واتساب</span>
+        </a>
       </div>
     </div>
   </header>
@@ -103,83 +98,83 @@
   <!-- ============================================================ -->
   <!-- HERO RUNWAY SECTION                                          -->
   <!-- ============================================================ -->
-  <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
+  <section class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         
         <!-- Left / Start Text Content -->
-        <div class="lg:col-span-7 space-y-6 text-start z-10">
-          <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.04] border border-[#c5a059]/30 backdrop-blur-md">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#c5a059]"></span>
-            <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#dfba89]" data-i18n="heroBadge">المشهد الأول — كوتور الخريف والشتاء 2026</span>
+        <div class="lg:col-span-7 space-y-5 text-start z-10">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-[#c5a059]/30 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-[#c5a059]"></span>
+            <span class="text-xs font-semibold text-[#dfba89]" data-i18n="heroBadge">براند مصري فاخر - تشكيلة كوتور 2026 الحصرية</span>
           </div>
 
-          <h1 class="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold tracking-normal leading-[1.15] text-white">
-            <span class="block" data-i18n="heroTitle1">حينما تتحدث الفخامة</span>
-            <span class="block text-gold-gradient font-serif-luxury italic" data-i18n="heroTitle2">بلغة السينما الخالدة.</span>
+          <h1 class="font-editorial text-3xl sm:text-5xl lg:text-6xl font-bold text-white">
+            <span class="block mb-2" data-i18n="heroTitle1">ليست مجرد حقيبة..</span>
+            <span class="block text-gold-gradient" data-i18n="heroTitle2">إنها تحفة معمارية تصنع حضوركِ.</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-gray-300/80 max-w-xl leading-relaxed font-light" data-i18n="heroDesc">
-            تصاميم معمارية استثنائية صُنعت يدوياً من أفخم الجلود الإيطالية المصقولة. صُممت للمرأة التي لا تتبع صيحات الموضة العابرة.. بل تفرض حضورها الآسر في كل كادر.
+          <p class="text-sm sm:text-base text-gray-300/90 max-w-xl leading-relaxed" data-i18n="heroDesc">
+            أرقى تشكيلة حقائب حريمي مصرية بمواصفات عالمية، صُنعت بأيدي أمهر الحرفيين من أفخم الجلود الطبيعية المصقولة لتمنحكِ ثقة وجاذبية في كل مناسبة.
           </p>
 
           <!-- CTAs -->
-          <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="#lookbook" class="px-8 py-4 rounded-xl bg-gold-gradient text-black font-extrabold text-sm sm:text-base hover:opacity-95 transition-all shadow-[0_0_25px_rgba(197,160,89,0.3)] flex items-center gap-2 group">
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#lookbook" class="px-7 py-3.5 rounded-xl bg-gold-gradient text-black font-extrabold text-sm sm:text-base hover:opacity-95 transition-all shadow-[0_4px_20px_rgba(197,160,89,0.25)] flex items-center gap-2 group">
               <span data-i18n="heroCtaPrimary">استكشفي سينما الإطلالات</span>
-              <span class="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">✦</span>
+              <span class="group-hover:-translate-x-1 transition-transform">✦</span>
             </a>
-            <a href="#collection" class="px-8 py-4 rounded-xl border border-white/20 hover:border-[#c5a059]/60 bg-white/[0.03] hover:bg-white/[0.08] font-bold text-sm sm:text-base text-gray-200 transition-all" data-i18n="heroCtaSecondary">
+            <a href="#collection" class="px-7 py-3.5 rounded-xl border border-white/20 hover:border-[#c5a059]/60 bg-white/[0.03] hover:bg-white/[0.08] font-bold text-sm sm:text-base text-gray-200 transition-all" data-i18n="heroCtaSecondary">
               المجموعة الكاملة
             </a>
           </div>
 
-          <!-- Feature Bullets -->
-          <div class="pt-8 grid grid-cols-3 gap-6 border-t border-white/[0.08] text-xs sm:text-sm">
+          <!-- Feature Bullets (Egyptian Trust Badges) -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/[0.08] text-xs sm:text-sm">
             <div>
-              <p class="font-bold text-white font-editorial text-xl text-[#dfba89]">100%</p>
-              <p class="text-gray-400 font-light mt-0.5">جلد عجل إيطالي نقي</p>
+              <p class="font-bold text-white font-editorial text-lg text-[#dfba89]">100%</p>
+              <p class="text-gray-400 mt-0.5">جلود طبيعية فاخرة</p>
             </div>
             <div>
-              <p class="font-bold text-white font-editorial text-xl text-[#dfba89]">LIMITED</p>
-              <p class="text-gray-400 font-light mt-0.5">إصدارات مرقمة حصرية</p>
+              <p class="font-bold text-white font-editorial text-lg text-[#dfba89]">معاينة</p>
+              <p class="text-gray-400 mt-0.5">افتحي وعايني قبل الدفع</p>
             </div>
             <div>
-              <p class="font-bold text-white font-editorial text-xl text-[#dfba89]">BESPOKE</p>
-              <p class="text-gray-400 font-light mt-0.5">نقش ذهبي مجاني</p>
+              <p class="font-bold text-white font-editorial text-lg text-[#dfba89]">مصر</p>
+              <p class="text-gray-400 mt-0.5">شحن لجميع المحافظات</p>
             </div>
           </div>
         </div>
 
-        <!-- Right / Cinematic Bag Showcase -->
+        <!-- Right / Cinematic Bag Showcase (No Price) -->
         <div class="lg:col-span-5 relative flex justify-center items-center">
-          <div class="tilt-card glass-panel p-6 sm:p-8 rounded-3xl relative w-full max-w-md border border-[#c5a059]/30 shadow-2xl">
+          <div class="tilt-card glass-panel p-5 sm:p-7 rounded-3xl relative w-full max-w-md border border-[#c5a059]/30 shadow-2xl">
             
             <!-- Top tag -->
-            <div class="flex items-center justify-between mb-4 border-b border-white/[0.06] pb-3">
-              <span class="text-[10px] font-bold tracking-[0.25em] text-[#dfba89] uppercase">EDITION N° 01</span>
-              <span class="text-xs text-gray-400 font-mono tracking-widest">#AHLAM-2026-FW</span>
+            <div class="flex items-center justify-between mb-3 border-b border-white/[0.06] pb-2.5">
+              <span class="text-xs font-bold text-[#dfba89]">قطعة الموسم الحصرية</span>
+              <span class="text-xs text-gray-400 font-mono">#AHLAM-2026</span>
             </div>
 
             <!-- Bag Hero Image with Cinema Frame -->
-            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-transparent flex items-center justify-center p-3 border border-white/[0.06]">
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-transparent flex items-center justify-center p-2 border border-white/[0.06]">
               <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" 
                    alt="The Prism Luna Crescent" 
-                   class="w-full h-full object-cover rounded-xl floating-bag-hero drop-shadow-[0_25px_40px_rgba(0,0,0,0.9)]" />
+                   class="w-full h-full object-cover rounded-xl floating-bag-hero drop-shadow-[0_20px_35px_rgba(0,0,0,0.8)]" />
             </div>
 
             <!-- Bottom Specs -->
-            <div class="mt-5 space-y-2 text-start">
+            <div class="mt-4 space-y-2 text-start">
               <div class="flex items-center justify-between">
-                <h3 class="font-bold font-editorial text-xl text-white">The Prism Luna Crescent</h3>
-                <span class="font-bold font-editorial text-[#dfba89] text-lg">1,275 ر.س</span>
+                <h3 class="font-bold font-editorial text-lg text-white">حقيبة لونا المنشورية</h3>
+                <span class="text-xs font-semibold text-[#dfba89] px-2.5 py-1 rounded bg-white/[0.05] border border-[#c5a059]/30">إصدار حصري</span>
               </div>
-              <p class="text-xs text-gray-400 leading-relaxed font-light">انحناءات معمارية ناعمة من جلد العجل الإيطالي المشمس، صُممت لتكون محور الجاذبية في كل إطلالة.</p>
+              <p class="text-xs text-gray-400 leading-relaxed font-light">انحناءات معمارية ناعمة من الجلد الطبيعي المصقول، صُممت لتكون محور الجاذبية في كل إطلالة.</p>
               
-              <div class="pt-3 flex items-center gap-2">
-                <button onclick="addToCart('ahlam-prism-luna', 'Solar Tangerine'); triggerFlyAnimation(this);" class="w-full py-3.5 rounded-xl bg-gold-gradient text-black font-extrabold text-xs uppercase tracking-widest hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(197,160,89,0.25)]">
+              <div class="pt-2 flex items-center gap-2">
+                <button onclick="addToCart('ahlam-prism-luna', 'Cognac Amber'); triggerFlyAnimation(this);" class="w-full py-3 rounded-xl bg-gold-gradient text-black font-extrabold text-xs uppercase hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(197,160,89,0.2)]">
                   <span>+</span>
-                  <span data-i18n="btnAddToBag">أضيفي إلى الحقيبة</span>
+                  <span data-i18n="btnAddToBag">طلب الشنطة</span>
                 </button>
               </div>
             </div>
@@ -191,116 +186,116 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- MARQUEE RUNWAY RIBBON                                        -->
+  <!-- MARQUEE RUNWAY RIBBON (EGYPTIAN LOCAL CONTEXT)               -->
   <!-- ============================================================ -->
-  <div class="relative py-4 bg-white/[0.02] border-y border-white/[0.06] overflow-hidden">
-    <div class="animate-marquee whitespace-nowrap text-xs font-semibold uppercase tracking-[0.25em] text-gray-300">
-      <span class="mx-6 text-[#dfba89]" data-i18n="marqueeText">✦ شحن دولي سريع مجاني للطلبات فوق 1,500 ريال ✦ جلود إيطالية فاخرة 100% ✦ إصدارات حصرية مرقمة ✦ نقش ذهبي مجاني للأحرف الأولى ✦ فخامة سينمائية خالدة ✦</span>
-      <span class="mx-6 text-[#dfba89]" data-i18n="marqueeText">✦ شحن دولي سريع مجاني للطلبات فوق 1,500 ريال ✦ جلود إيطالية فاخرة 100% ✦ إصدارات حصرية مرقمة ✦ نقش ذهبي مجاني للأحرف الأولى ✦ فخامة سينمائية خالدة ✦</span>
+  <div class="relative py-3.5 bg-white/[0.02] border-y border-white/[0.06] overflow-hidden">
+    <div class="animate-marquee whitespace-nowrap text-xs font-semibold text-gray-300">
+      <span class="mx-6 text-[#dfba89]" data-i18n="marqueeText">✦ شحن وتوصيل سريع لجميع محافظات مصر (القاهرة، الجيزة، الإسكندرية وجميع المحافظات) ✦ إمكانية المعاينة قبل الاستلام ✦ جلود طبيعية 100% عالية الجودة ✦ إصدارات حصرية محدودة ✦ خدمة عملاء متميزة ✦</span>
+      <span class="mx-6 text-[#dfba89]" data-i18n="marqueeText">✦ شحن وتوصيل سريع لجميع محافظات مصر (القاهرة، الجيزة، الإسكندرية وجميع المحافظات) ✦ إمكانية المعاينة قبل الاستلام ✦ جلود طبيعية 100% عالية الجودة ✦ إصدارات حصرية محدودة ✦ خدمة عملاء متميزة ✦</span>
     </div>
   </div>
 
   <!-- ============================================================ -->
   <!-- CORE FEATURE 1: INTERACTIVE LOOKBOOK & OUTFIT MATCHER       -->
   <!-- ============================================================ -->
-  <section id="lookbook" class="py-24 sm:py-32 relative">
+  <section id="lookbook" class="py-20 sm:py-28 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-[#c5a059]/30">
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-[#c5a059]/30">
           <span class="text-[#dfba89]">✦</span>
-          <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#dfba89]" data-i18n="lookbookBadge">سينما الأزياء ومنسّق الإطلالات</span>
+          <span class="text-xs font-bold text-[#dfba89]" data-i18n="lookbookBadge">سينما الأزياء ومنسّق الإطلالات</span>
         </div>
-        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-white tracking-wide" data-i18n="lookbookTitle">
+        <h2 class="font-editorial text-2xl sm:text-4xl lg:text-5xl font-bold text-white" data-i18n="lookbookTitle">
           مجلة الموضة ومنسّق الإطلالات السينمائي
         </h2>
-        <p class="text-gray-300/80 text-sm sm:text-base leading-relaxed font-light" data-i18n="lookbookSubtitle">
-          اختاري المشهد أو نمط الملابس، وشاهدي كيف تكتمل إطلالتك بتناغم سينمائي مع حقائب متجر أحلام (Ahlam Store).
+        <p class="text-gray-300/80 text-xs sm:text-sm leading-relaxed" data-i18n="lookbookSubtitle">
+          اختاري المشهد أو نمط الملابس، وشاهدي كيف تكتمل إطلالتك بتناغم سينمائي مع حقائب متجر أحلام.
         </p>
 
         <!-- Style Selector Tabs -->
-        <div id="lookbook-style-tabs" class="pt-6 flex flex-wrap justify-center gap-3">
+        <div id="lookbook-style-tabs" class="pt-5 flex flex-wrap justify-center gap-2 sm:gap-3">
           <!-- Populated by JS -->
         </div>
       </div>
 
       <!-- Interactive Lookbook Showcase Stage -->
-      <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-[#c5a059]/20 relative overflow-hidden shadow-2xl">
+      <div class="glass-panel rounded-3xl p-5 sm:p-8 lg:p-10 border border-[#c5a059]/20 relative overflow-hidden shadow-2xl">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <!-- Column 1: Model & Outfit Breakdown (5 cols) -->
-          <div class="lg:col-span-5 space-y-5">
+          <div class="lg:col-span-5 space-y-4">
             <div class="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group shadow-lg">
               <img id="lookbook-model-img" src="" alt="Lookbook Model" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               
-              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-6">
-                <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-[#dfba89] mb-1">CINEMATIC SCENE RUNWAY</span>
-                <h3 id="lookbook-style-title" class="text-2xl font-bold font-editorial text-white mb-2"></h3>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-5">
+                <span class="text-xs font-bold text-[#dfba89] mb-1">تنسيق المشهد السينمائي</span>
+                <h3 id="lookbook-style-title" class="text-xl sm:text-2xl font-bold font-editorial text-white mb-1.5"></h3>
                 <p id="lookbook-style-tagline" class="text-xs text-gray-300/90 leading-relaxed font-light"></p>
               </div>
             </div>
 
             <!-- Outfit Pieces breakdown -->
-            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] space-y-3">
-              <h4 class="text-xs font-bold uppercase tracking-[0.15em] text-[#dfba89]" data-i18n="outfitElementsTitle">تفاصيل الإطلالة (Look Breakdown):</h4>
-              <ul id="lookbook-outfit-pieces" class="space-y-2">
+            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-2">
+              <h4 class="text-xs font-bold text-[#dfba89]" data-i18n="outfitElementsTitle">تفاصيل الإطلالة (Look Breakdown):</h4>
+              <ul id="lookbook-outfit-pieces" class="space-y-1.5">
                 <!-- Populated by JS -->
               </ul>
             </div>
           </div>
 
           <!-- Column 2: Center Synergy & Match Score (3 cols) -->
-          <div class="lg:col-span-3 flex flex-col items-center justify-center text-center p-7 rounded-2xl bg-[#0b0b0f]/80 border border-[#c5a059]/25 space-y-6 shadow-xl">
+          <div class="lg:col-span-3 flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-[#0b0b0f]/80 border border-[#c5a059]/25 space-y-5 shadow-xl">
             
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#dfba89]" data-i18n="matchLabel">نسبة التناغم البصري</span>
+            <span class="text-xs font-bold text-[#dfba89]" data-i18n="matchLabel">نسبة التناغم البصري</span>
 
             <!-- Circular animated gauge in luxury gold -->
-            <div class="relative w-36 h-36 flex items-center justify-center">
+            <div class="relative w-32 h-32 flex items-center justify-center">
               <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.06)" stroke-width="6" fill="none" />
                 <circle id="lookbook-match-ring" cx="50" cy="50" r="45" stroke="#c5a059" stroke-width="6" stroke-linecap="round" fill="none" class="match-meter-circle" />
               </svg>
               <div class="absolute flex flex-col items-center justify-center">
-                <span id="lookbook-match-num" class="font-editorial text-3xl font-extrabold text-[#dfba89]">98%</span>
-                <span class="text-[9px] tracking-[0.25em] text-gray-400 font-mono">SYNERGY</span>
+                <span id="lookbook-match-num" class="font-editorial text-2xl font-extrabold text-[#dfba89]">98%</span>
+                <span class="text-[9px] text-gray-400 font-mono">تطابق تام</span>
               </div>
             </div>
 
             <!-- Stylist Note -->
-            <div class="text-start p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+            <div class="text-start p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
               <p class="text-[11px] font-bold text-[#dfba89] mb-1" data-i18n="stylingAdviceTitle">نصيحة خبيرة المظهر:</p>
               <p id="lookbook-stylist-note" class="text-xs text-gray-300 leading-relaxed font-light"></p>
             </div>
 
-            <!-- CTA button -->
-            <button id="btn-shop-lookbook-duo" class="w-full py-3.5 px-4 rounded-xl bg-gold-gradient text-black font-extrabold text-xs uppercase tracking-widest hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_25px_rgba(197,160,89,0.3)]">
+            <!-- CTA button (Working) -->
+            <button id="btn-shop-lookbook-duo" class="w-full py-3.5 px-4 rounded-xl bg-gold-gradient text-black font-extrabold text-xs hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(197,160,89,0.25)]">
               <span>✦</span>
               <span data-i18n="btnShopDuo">اطلبي الحقيبة لتنسيق هذه الإطلالة</span>
             </button>
           </div>
 
-          <!-- Column 3: The Paired Bag Showcase & Bag Switcher (4 cols) -->
-          <div class="lg:col-span-4 space-y-6">
+          <!-- Column 3: The Paired Bag Showcase & Alternatives (4 cols - No Price) -->
+          <div class="lg:col-span-4 space-y-5">
             
             <!-- Matched Bag Card -->
-            <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] space-y-4">
-              <div class="aspect-square rounded-xl overflow-hidden bg-neutral-900/60 p-4 flex items-center justify-center border border-white/[0.06]">
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] space-y-3">
+              <div class="aspect-square rounded-xl overflow-hidden bg-neutral-900/60 p-3 flex items-center justify-center border border-white/[0.06]">
                 <img id="lookbook-bag-img" src="" alt="Matched Bag" class="w-full h-full object-cover rounded-lg" />
               </div>
 
               <div>
                 <div class="flex items-baseline justify-between mb-1">
-                  <h4 id="lookbook-bag-title" class="text-lg font-bold font-editorial text-white"></h4>
-                  <span id="lookbook-bag-price" class="text-base font-bold text-[#dfba89] font-editorial"></span>
+                  <h4 id="lookbook-bag-title" class="text-base font-bold font-editorial text-white"></h4>
+                  <span class="text-xs font-semibold text-[#dfba89] px-2 py-0.5 rounded bg-white/[0.05] border border-[#c5a059]/30">قطعة حصرية</span>
                 </div>
                 <p id="lookbook-bag-material" class="text-xs text-gray-400 font-light"></p>
               </div>
             </div>
 
-            <!-- Bag alternatives switcher -->
-            <div class="space-y-3">
+            <!-- Bag alternatives switcher (Working) -->
+            <div class="space-y-2">
               <h5 class="text-xs font-semibold text-gray-400" data-i18n="switchBagLabel">جرّبي حقيبة أخرى مع هذا النمط:</h5>
               <div id="lookbook-bag-alternatives" class="grid grid-cols-2 gap-2">
                 <!-- Populated by JS -->
@@ -319,24 +314,24 @@
   <!-- ============================================================ -->
   <!-- CORE FEATURE 2: "WHAT FITS INSIDE?" CAPACITY VISUALIZER     -->
   <!-- ============================================================ -->
-  <section id="capacity" class="py-20 sm:py-28 relative bg-[#0a0a0f] border-y border-white/5">
+  <section id="capacity" class="py-16 sm:py-24 relative bg-[#09090c] border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-          <span class="text-accent-glow">🎒</span>
-          <span class="text-xs font-bold uppercase tracking-wider text-gray-300" data-i18n="capacityBadge">ميزة 'إيه اللي هيكفّي جوة الشنطة؟'</span>
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-[#c5a059]/30">
+          <span class="text-[#dfba89]">🎒</span>
+          <span class="text-xs font-bold text-[#dfba89]" data-i18n="capacityBadge">ميزة 'إيه اللي هيكفّي جوة الشنطة؟'</span>
         </div>
-        <h2 class="font-editorial text-3xl sm:text-5xl font-extrabold text-white" data-i18n="capacityTitle">
+        <h2 class="font-editorial text-2xl sm:text-4xl lg:text-5xl font-bold text-white" data-i18n="capacityTitle">
           ستوديو السعة التفاعلي (Inside The Bag)
         </h2>
-        <p class="text-gray-400 text-sm sm:text-base leading-relaxed" data-i18n="capacitySubtitle">
-          اختاري حقيبتك، وضعي متعلقاتكِ اليومية بضغطة زر للتأكد من المقاس الفعلي قبل الشراء.
+        <p class="text-gray-300/80 text-xs sm:text-sm leading-relaxed" data-i18n="capacitySubtitle">
+          اختاري حقيبتك، وضعي متعلقاتكِ اليومية بضغطة زر للتأكد من المقاس الفعلي قبل الطلب.
         </p>
 
         <!-- Bag Selector Pills -->
-        <div class="pt-4">
+        <div class="pt-3">
           <p class="text-xs text-gray-400 mb-2 font-semibold" data-i18n="selectBagToTest">اختاري الموديل للتجربة:</p>
           <div id="capacity-bag-pills" class="flex flex-wrap justify-center gap-2">
             <!-- Populated by JS -->
@@ -348,21 +343,21 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- Bag Visual & Space Meter (5 cols) -->
-        <div class="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl space-y-6">
-          <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-900/80 p-4 flex items-center justify-center border border-white/10">
+        <div class="lg:col-span-5 glass-panel p-5 sm:p-7 rounded-3xl space-y-5 border border-white/10">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-900/80 p-3 flex items-center justify-center border border-white/10">
             <img id="capacity-bag-img" src="" alt="Testing Bag" class="w-full h-full object-cover rounded-xl" />
           </div>
 
           <div>
-            <div class="flex items-center justify-between mb-1">
-              <h3 id="capacity-bag-name" class="text-xl font-bold font-editorial text-white"></h3>
-              <span id="capacity-percent-label" class="text-sm font-bold font-mono text-accent-glow">0%</span>
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 id="capacity-bag-name" class="text-lg font-bold font-editorial text-white"></h3>
+              <span id="capacity-percent-label" class="text-xs font-bold font-mono text-[#dfba89]">0%</span>
             </div>
-            <p id="capacity-bag-dims" class="text-xs text-gray-400 mb-4 font-mono"></p>
+            <p id="capacity-bag-dims" class="text-xs text-gray-400 mb-3 font-mono"></p>
 
             <!-- Progress Bar -->
-            <div class="w-full bg-white/10 h-3.5 rounded-full overflow-hidden p-0.5 border border-white/10 mb-3">
-              <div id="capacity-bar-fill" class="h-full rounded-full capacity-progress-bar bg-accent-solid" style="width: 50%;"></div>
+            <div class="w-full bg-white/10 h-3 rounded-full overflow-hidden p-0.5 border border-white/10 mb-3">
+              <div id="capacity-bar-fill" class="h-full rounded-full capacity-progress-bar bg-[#c5a059]" style="width: 50%;"></div>
             </div>
 
             <!-- Dynamic Status Alert Message -->
@@ -375,19 +370,19 @@
         <!-- Packing Items Grid (7 cols) -->
         <div class="lg:col-span-7 space-y-4">
           <div class="flex items-center justify-between">
-            <h4 class="text-sm font-bold text-gray-200" data-i18n="itemsToPack">انقري لإضافة أو إزالة المتعلقات:</h4>
-            <span class="text-xs text-gray-400 font-medium">كل غرض له نقاط سعة مخصصة</span>
+            <h4 class="text-xs font-bold text-gray-200" data-i18n="itemsToPack">انقري لإضافة أو إزالة المتعلقات:</h4>
+            <span class="text-xs text-[#dfba89] font-medium">تجربة سعة حقيقية</span>
           </div>
 
-          <div id="capacity-items-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <div id="capacity-items-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
             <!-- Populated by JS -->
           </div>
 
           <!-- Quick Tip Box -->
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3 mt-4">
-            <span class="text-xl">💡</span>
-            <p class="text-xs text-gray-300 leading-relaxed">
-              <strong>ملاحظة هندسية:</strong> تم قياس السعة بناءً على أبعاد التبطين الداخلي الفعلية لكل حقيبة بما في ذلك الجيوب السحابية المخفية والمحفظة القابلة للفصل.
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-start gap-3 mt-3">
+            <span class="text-lg">💡</span>
+            <p class="text-xs text-gray-300 leading-relaxed font-light">
+              <strong>ملاحظة للمقاس:</strong> القياسات مطابقة للأبعاد الداخلية الفعلية للحقيبة بما في ذلك الجيوب السحابية والتجويف المبطن.
             </p>
           </div>
         </div>
@@ -398,37 +393,35 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- CATALOG / RUNWAY COLLECTION                                  -->
+  <!-- CATALOG / RUNWAY COLLECTION (NO PRICES)                      -->
   <!-- ============================================================ -->
-  <section id="collection" class="py-24 sm:py-32 relative">
+  <section id="collection" class="py-20 sm:py-28 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
         <div>
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-3">
-            <span class="text-accent-glow">✦</span>
-            <span class="text-xs font-bold uppercase tracking-wider text-gray-300" data-i18n="catalogBadge">المجموعة الكاملة</span>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-[#c5a059]/30 mb-2.5">
+            <span class="text-[#dfba89]">✦</span>
+            <span class="text-xs font-bold text-[#dfba89]" data-i18n="catalogBadge">المجموعة الكاملة</span>
           </div>
-          <h2 class="font-editorial text-3xl sm:text-5xl font-extrabold text-white" data-i18n="catalogTitle">
+          <h2 class="font-editorial text-2xl sm:text-4xl font-bold text-white" data-i18n="catalogTitle">
             أيقونات متجر أحلام للأزياء الراقية
           </h2>
         </div>
 
-        <!-- Sort dropdown -->
-        <div class="flex items-center gap-3">
+        <!-- Sort dropdown (Working) -->
+        <div class="flex items-center gap-2.5">
           <span class="text-xs text-gray-400 font-semibold" data-i18n="sortBy">الترتيب حسب:</span>
-          <select onchange="setCatalogSort(this.value)" class="bg-white/5 border border-white/10 text-xs text-gray-200 py-2 px-3 rounded-xl focus:outline-none focus:border-white/30 cursor-pointer">
-            <option value="featured" class="bg-[#121218]" data-i18n="sortFeatured">الأبرز</option>
-            <option value="price-low" class="bg-[#121218]" data-i18n="sortPriceLow">السعر: من الأقل للأعلى</option>
-            <option value="price-high" class="bg-[#121218]" data-i18n="sortPriceHigh">السعر: من الأعلى للأقل</option>
-            <option value="rating" class="bg-[#121218]" data-i18n="sortRating">الأعلى تقييماً</option>
+          <select onchange="setCatalogSort(this.value)" class="bg-[#121218] border border-white/10 text-xs text-gray-200 py-2 px-3 rounded-xl focus:outline-none focus:border-[#c5a059] cursor-pointer">
+            <option value="featured" data-i18n="sortFeatured">الأبرز</option>
+            <option value="rating" data-i18n="sortRating">الأعلى تقييماً</option>
           </select>
         </div>
       </div>
 
-      <!-- Category Filter Pills -->
-      <div class="flex flex-wrap gap-2 sm:gap-3 mb-12">
+      <!-- Category Filter Pills (Working) -->
+      <div class="flex flex-wrap gap-2 mb-10">
         <button onclick="setCatalogFilter('all')" data-filter-btn="all" class="px-5 py-2.5 rounded-xl text-xs font-extrabold bg-gold-gradient text-black transition-all shadow-md" data-i18n="filterAll">الكل</button>
         <button onclick="setCatalogFilter('crossbody')" data-filter-btn="crossbody" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-white/[0.04] border border-white/10 text-gray-300 hover:border-[#c5a059]/40 transition-all" data-i18n="filterCrossbody">كروس بودي</button>
         <button onclick="setCatalogFilter('shoulder')" data-filter-btn="shoulder" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-white/[0.04] border border-white/10 text-gray-300 hover:border-[#c5a059]/40 transition-all" data-i18n="filterShoulder">حقائب كتف</button>
@@ -438,7 +431,7 @@
       </div>
 
       <!-- Products Grid -->
-      <div id="catalog-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="catalog-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <!-- Populated by JS -->
       </div>
 
@@ -446,102 +439,22 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- BESPOKE MONOGRAM STUDIO (استوديو النقش والدمغ الحرفي)        -->
+  <!-- REVIEWS & PRESS (EGYPTIAN TESTIMONIALS)                      -->
   <!-- ============================================================ -->
-  <section id="bespoke" class="py-20 sm:py-28 relative bg-[#09090e] border-y border-white/10">
+  <section id="reviews" class="py-16 sm:py-24 relative bg-[#09090c] border-t border-white/[0.06]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Text & Controls (6 cols) -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-            <span class="text-accent-glow">✨</span>
-            <span class="text-xs font-bold uppercase tracking-wider text-gray-300" data-i18n="monogramBadge">لمستكِ الخاصة الفريدة</span>
-          </div>
-
-          <h2 class="font-editorial text-3xl sm:text-5xl font-extrabold text-white" data-i18n="monogramTitle">
-            استوديو النقش والدمغ الحرفي
-          </h2>
-
-          <p class="text-gray-400 text-sm sm:text-base leading-relaxed" data-i18n="monogramDesc">
-            اجعلي حقيبتكِ فريدة تماماً. احفري حروف اسمكِ على بطاقة الجلد الطبيعي الفاخرة بطباعة الرقائق المعدنية الأصلية مجاناً.
-          </p>
-
-          <!-- Input initials -->
-          <div class="space-y-2">
-            <label class="text-xs font-bold text-gray-300 block">اكتبي حروفكِ الأولى (Initials):</label>
-            <input type="text" maxlength="4" value="AS" oninput="onMonogramInputChange(this.value)" placeholder="AS" class="w-full sm:w-64 px-4 py-3 rounded-xl bg-white/[0.04] border border-white/20 text-[#dfba89] font-editorial tracking-[0.2em] text-lg focus:outline-none focus:border-[#c5a059] uppercase transition-colors" />
-          </div>
-
-          <!-- Foil Types -->
-          <div class="space-y-2">
-            <label class="text-xs font-bold text-gray-300 block">اختاري نوع الرقاقة المعدنية (Foil Stamping):</label>
-            <div class="flex flex-wrap gap-3">
-              <button onclick="setMonogramFoil('gold')" data-foil-btn="gold" class="px-4 py-2 rounded-xl border border-[#c5a059] bg-white/[0.04] text-xs font-semibold text-[#dfba89] transition-all flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#c5a059]"></span>
-                <span data-i18n="foilGold">ذهب ملكي (Gold Foil)</span>
-              </button>
-              <button onclick="setMonogramFoil('silver')" data-foil-btn="silver" class="px-4 py-2 rounded-xl border border-white/10 bg-white/[0.04] text-xs font-semibold text-gray-300 hover:border-[#c5a059]/40 transition-all flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
-                <span data-i18n="foilSilver">بلاتين فضي (Silver Chrome)</span>
-              </button>
-              <button onclick="setMonogramFoil('deboss')" data-foil-btn="deboss" class="px-4 py-2 rounded-xl border border-white/10 bg-white/[0.04] text-xs font-semibold text-gray-300 hover:border-[#c5a059]/40 transition-all flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-neutral-700"></span>
-                <span data-i18n="foilDeboss">حفر غائر كلاسيكي (Deep Deboss)</span>
-              </button>
-            </div>
-          </div>
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-[#c5a059]/30">
+          <span class="text-[#dfba89]">★</span>
+          <span class="text-xs font-bold text-[#dfba89]" data-i18n="reviewsBadge">آراء عميلاتنا</span>
         </div>
-
-        <!-- Visual Leather Tag Render (6 cols) -->
-        <div class="lg:col-span-6 flex justify-center">
-          <div class="tilt-card glass-panel p-8 sm:p-12 rounded-3xl w-full max-w-sm flex flex-col items-center justify-center text-center relative border border-white/20 shadow-2xl">
-            
-            <div class="w-4 h-16 bg-neutral-800 rounded-full border border-white/20 mb-2"></div>
-            
-            <!-- Handcrafted Leather Tag Silhouette -->
-            <div class="w-48 h-64 rounded-3xl bg-gradient-to-b from-[#1c1c24] to-[#111116] border-2 border-[#2b2b36] shadow-[0_20px_50px_rgba(0,0,0,0.9)] flex flex-col items-center justify-between p-6 relative">
-              
-              <!-- Tag Stitching line decoration -->
-              <div class="absolute inset-2 border border-dashed border-white/10 rounded-2xl pointer-events-none"></div>
-
-              <span class="text-[10px] uppercase tracking-widest text-gray-500 font-mono">AHLAM BESPOKE</span>
-
-              <!-- Live Foil Monogram -->
-              <div class="my-auto">
-                <span id="monogram-live-text" class="text-3xl font-extrabold font-editorial tracking-widest foil-gold">AS</span>
-              </div>
-
-              <span class="text-[9px] uppercase tracking-widest text-gray-500 font-mono">GENUINE LEATHER</span>
-            </div>
-
-            <p class="text-xs text-gray-400 mt-6">معاينة حية للنقش على بطاقة التعليق الجلدية المرفقة مجاناً مع كل طلب</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- REVIEWS & PRESS                                              -->
-  <!-- ============================================================ -->
-  <section id="reviews" class="py-24 sm:py-32 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-          <span class="text-accent-glow">★</span>
-          <span class="text-xs font-bold uppercase tracking-wider text-gray-300" data-i18n="reviewsBadge">أيقونات الأناقة يتحدثن</span>
-        </div>
-        <h2 class="font-editorial text-3xl sm:text-5xl font-extrabold text-white" data-i18n="reviewsTitle">
-          تجارب حية من عواصم الموضة
+        <h2 class="font-editorial text-2xl sm:text-4xl font-bold text-white" data-i18n="reviewsTitle">
+          تجارب حية من عميلاتنا في مصر
         </h2>
       </div>
 
-      <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <!-- Populated by JS -->
       </div>
 
@@ -551,78 +464,65 @@
   <!-- ============================================================ -->
   <!-- FOOTER                                                       -->
   <!-- ============================================================ -->
-  <footer class="bg-[#050507] border-t border-white/10 pt-16 pb-12 text-sm text-gray-400">
+  <footer class="bg-[#050507] border-t border-white/10 pt-12 pb-10 text-sm text-gray-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Top Guarantee Badges -->
-      <div class="py-6 px-8 rounded-2xl bg-white/[0.02] border border-white/[0.07] flex flex-wrap items-center justify-between gap-4 mb-16 text-xs sm:text-sm text-gray-300">
+      <div class="py-5 px-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] flex flex-wrap items-center justify-between gap-4 mb-12 text-xs sm:text-sm text-gray-300">
         <div class="flex items-center gap-2.5">
           <span>🛡️</span>
-          <span>ضمان الجلد الإيطالي الطبيعي مدى الحياة</span>
+          <span>معاينة الشنطة قبل الاستلام والدفع</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span>🚚</span>
+          <span>شحن سريع لجميع محافظات مصر</span>
         </div>
         <div class="flex items-center gap-2.5">
           <span>🔄</span>
-          <span>استبدال وإرجاع مجاني خلال 14 يوماً</span>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <span>🎁</span>
-          <span>تغليف هدايا ملكي بصندوق Ahlam Store الأرشيفي</span>
+          <span>استبدال مجاني خلال 14 يوماً</span>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/[0.06]">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/[0.06]">
         
-        <!-- Brand Info (5 cols) -->
-        <div class="md:col-span-5 space-y-4 text-start">
-          <div class="flex items-center gap-2.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#c5a059] shadow-[0_0_8px_rgba(197,160,89,0.8)]"></span>
-            <span class="font-editorial text-2xl font-bold tracking-[0.16em] text-white">AHLAM STORE</span>
+        <!-- Brand Info (6 cols) -->
+        <div class="md:col-span-6 space-y-3 text-start">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#c5a059]"></span>
+            <span class="font-editorial text-xl font-bold text-white">AHLAM STORE</span>
           </div>
-          <p class="text-xs sm:text-sm leading-relaxed max-w-sm text-gray-400 font-light" data-i18n="footerDesc">
-            دار أزياء معاصرة تعيد تعريف صناعة الحقائب الفاخرة بلمسات هندسية جريئة، تجمع بين فخامة الحرفية الإيطالية وتطلعات الجيل الجديد.
+          <p class="text-xs sm:text-sm leading-relaxed max-w-md text-gray-400 font-light" data-i18n="footerDesc">
+            براند مصري راقٍ للحقائب الحريمي، نصنع كل قطعة بشغف واهتمام بأدق التفاصيل من الجلود الطبيعية الفاخرة لتكون رفيقتكِ الدائمة في كل إطلالة.
           </p>
         </div>
 
-        <!-- Quick Links (2 cols) -->
-        <div class="md:col-span-2 space-y-3">
+        <!-- Quick Links (3 cols) -->
+        <div class="md:col-span-3 space-y-2.5">
           <h4 class="text-xs font-bold uppercase tracking-widest text-[#dfba89]" data-i18n="footerLinksTitle">روابط سريعة</h4>
           <ul class="space-y-2 text-xs">
             <li><a href="#lookbook" class="hover:text-white transition-colors" data-i18n="navLookbook">منسق الإطلالات</a></li>
             <li><a href="#capacity" class="hover:text-white transition-colors" data-i18n="navCapacity">ماذا تكفي حقيبتك؟</a></li>
             <li><a href="#collection" class="hover:text-white transition-colors" data-i18n="navCollection">المجموعة الحصرية</a></li>
-            <li><a href="#bespoke" class="hover:text-white transition-colors" data-i18n="navCustomizer">استوديو النقش</a></li>
+            <li><a href="#reviews" class="hover:text-white transition-colors" data-i18n="navReviews">آراء عميلاتنا</a></li>
           </ul>
         </div>
 
-        <!-- Client Services (2 cols) -->
-        <div class="md:col-span-2 space-y-3">
-          <h4 class="text-xs font-bold uppercase tracking-widest text-[#dfba89]" data-i18n="footerServicesTitle">خدمات العملاء</h4>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#" class="hover:text-white transition-colors">تتبع الشحنات</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">دليل العناية بالجلد</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">الاستبدال والاسترجاع</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">خدمة العملاء VIP</a></li>
-          </ul>
-        </div>
-
-        <!-- Newsletter (3 cols) -->
-        <div class="md:col-span-3 space-y-3">
-          <h4 class="text-xs font-bold uppercase tracking-widest text-[#dfba89]" data-i18n="footerSocialTitle">تابعي أحدث الإصدارات</h4>
-          <p class="text-xs text-gray-400 font-light">انضمي لقائمتنا البريدية الخاصة لتلقي دعوات مسبقة للإصدارات المحدودة.</p>
-          <div class="flex items-center gap-2">
-            <input type="email" placeholder="بريدكِ الإلكتروني" class="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white focus:outline-none focus:border-[#c5a059]" />
-            <button class="px-4 py-2 rounded-xl bg-gold-gradient text-black text-xs font-extrabold hover:opacity-95">انضمام</button>
-          </div>
+        <!-- Customer Care & WhatsApp (3 cols) -->
+        <div class="md:col-span-3 space-y-2.5">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-[#dfba89]">خدمة العملاء والطلب</h4>
+          <p class="text-xs text-gray-400">لأي استفسار أو طلب خاص عبر واتساب مباشرة:</p>
+          <a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-950/50 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-900/50 text-xs font-bold transition-all">
+            <span>💬</span>
+            <span>تحدثي معنا عبر واتساب</span>
+          </a>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-        <p data-i18n="footerRights">جميع الحقوق محفوظة © 2026 Ahlam Store.</p>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+        <p data-i18n="footerRights">جميع الحقوق محفوظة © 2026 Ahlam Store - جمهورية مصر العربية.</p>
         <div class="flex items-center gap-4">
-          <a href="#" class="hover:text-gray-400">سياسة الخصوصية</a>
-          <a href="#" class="hover:text-gray-400">الشروط والأحكام</a>
-          <a href="#" class="hover:text-gray-400">شهادة الأصالة</a>
+          <span>صُنع بحب في مصر 🇪🇬</span>
         </div>
       </div>
 
@@ -630,86 +530,103 @@
   </footer>
 
   <!-- ============================================================ -->
-  <!-- SLIDE-OUT CART DRAWER                                        -->
+  <!-- SLIDE-OUT CART DRAWER & ORDER FORM                           -->
   <!-- ============================================================ -->
-  <div id="cart-backdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <div id="cart-backdrop" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 hidden transition-opacity"></div>
   
-  <div id="cart-drawer" class="fixed top-0 bottom-0 right-0 rtl:right-auto rtl:left-0 w-full max-w-md bg-[#0d0d12] border-s rtl:border-s-0 rtl:border-r border-white/10 z-50 transform translate-x-full rtl:-translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between shadow-2xl">
+  <div id="cart-drawer" class="fixed top-0 bottom-0 right-0 rtl:right-auto rtl:left-0 w-full sm:max-w-md bg-[#0e0e13] border-s rtl:border-s-0 rtl:border-r border-white/10 z-50 transform translate-x-full rtl:-translate-x-full transition-transform duration-400 ease-in-out flex flex-col justify-between shadow-2xl">
     
     <!-- Cart Header -->
-    <div class="p-6 border-b border-white/10 flex items-center justify-between">
+    <div class="p-5 border-b border-white/10 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="text-lg">🛍️</span>
-        <h3 class="text-base font-bold font-editorial text-white" data-i18n="cartTitle">حقيبة التسوق الخاصة بكِ</h3>
+        <h3 class="text-sm font-bold font-editorial text-white" data-i18n="cartTitle">الشنط المختارة للطلب</h3>
       </div>
       <button onclick="closeCartDrawer()" class="p-2 text-gray-400 hover:text-white text-lg">✕</button>
     </div>
 
-    <!-- Free shipping meter -->
-    <div class="px-6 py-3 bg-white/[0.03] border-b border-white/[0.05]">
-      <p id="free-shipping-text" class="text-xs text-gray-300 font-semibold mb-1.5"></p>
-      <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
-        <div id="free-shipping-bar" class="h-full bg-gold-gradient rounded-full transition-all duration-500" style="width: 0%;"></div>
-      </div>
+    <!-- Free shipping notice -->
+    <div class="px-5 py-2.5 bg-white/[0.02] border-b border-white/[0.05] flex items-center gap-2 text-xs text-[#dfba89]">
+      <span>🚚</span>
+      <span>شحن سريع لجميع محافظات مصر مع إمكانية المعاينة قبل الاستلام</span>
     </div>
 
     <!-- Items List -->
-    <div id="cart-items-container" class="flex-1 overflow-y-auto px-6 py-2">
+    <div id="cart-items-container" class="flex-1 overflow-y-auto px-5 py-2">
       <!-- Populated by JS -->
     </div>
 
-    <!-- Cart Footer & Checkout -->
-    <div class="p-6 border-t border-white/[0.08] bg-[#09090c] space-y-4">
+    <!-- Order Submission Area -->
+    <div id="cart-order-form-container" class="p-5 border-t border-white/[0.08] bg-[#09090c] space-y-3.5">
       
-      <!-- Promo code input -->
-      <div class="flex items-center gap-2">
-        <input type="text" id="promo-code-input" placeholder="رمز الخصم (جرّبي VIBE20)" data-i18n-placeholder="promoPlaceholder" class="flex-1 px-3 py-2 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white focus:outline-none focus:border-[#c5a059] uppercase transition-colors" />
-        <button onclick="applyPromoCode()" class="px-4 py-2 rounded-xl border border-white/20 hover:border-[#c5a059]/40 text-xs font-semibold text-gray-200" data-i18n="promoApply">تطبيق</button>
+      <div id="cart-summary-text" class="text-xs text-gray-300 font-semibold flex justify-between">
+        <span>القطع المطلوبة:</span>
+        <span id="cart-total-count" class="text-[#dfba89] font-bold font-editorial">0 قطع</span>
       </div>
 
-      <!-- Totals -->
-      <div class="space-y-1.5 pt-2 text-xs">
-        <div class="flex justify-between text-gray-400">
-          <span data-i18n="subtotal">المجموع الفرعي:</span>
-          <span id="cart-subtotal" class="font-bold text-[#dfba89] font-editorial text-sm">0 ر.س</span>
+      <!-- Quick Checkout Form -->
+      <form id="quick-order-form" onsubmit="event.preventDefault(); submitOrderForm();" class="space-y-2.5">
+        <div>
+          <input type="text" id="order-customer-name" required placeholder="اسمكِ بالكامل" class="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c5a059]" />
         </div>
-        <div class="flex justify-between text-gray-400">
-          <span data-i18n="shipping">الشحن الدولي السريع:</span>
-          <span class="text-emerald-400 font-semibold" data-i18n="freeShipping">مجاني</span>
+        <div>
+          <input type="tel" id="order-customer-phone" required placeholder="رقم الموبايل (واتساب)" class="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c5a059]" />
         </div>
-      </div>
+        <div>
+          <select id="order-customer-gov" class="w-full px-3 py-2 rounded-xl bg-[#14141a] border border-white/10 text-xs text-gray-200 focus:outline-none focus:border-[#c5a059] cursor-pointer">
+            <option value="القاهرة">القاهرة</option>
+            <option value="الجيزة">الجيزة</option>
+            <option value="الإسكندرية">الإسكندرية</option>
+            <option value="القليوبية">القليوبية</option>
+            <option value="الشرقية">الشرقية</option>
+            <option value="الدقهلية">الدقهلية</option>
+            <option value="الغربية">الغربية</option>
+            <option value="المنوفية">المنوفية</option>
+            <option value="البحيرة">البحيرة</option>
+            <option value="محافظة أخرى">محافظة أخرى</option>
+          </select>
+        </div>
+        <div>
+          <input type="text" id="order-customer-address" required placeholder="العنوان بالتفصيل" class="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c5a059]" />
+        </div>
 
-      <!-- Checkout Button -->
-      <button onclick="executeCheckout()" class="w-full py-4 rounded-xl bg-gold-gradient text-black font-extrabold text-sm uppercase tracking-widest hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_25px_rgba(197,160,89,0.3)]">
-        <span data-i18n="checkoutBtn">إتمام الطلب بأمان</span>
-        <span>→</span>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-gradient text-black font-extrabold text-xs uppercase hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(197,160,89,0.25)]">
+          <span>تأكيد الطلب (الدفع عند الاستلام والمعاينة)</span>
+          <span>✓</span>
+        </button>
+      </form>
+
+      <!-- Direct WhatsApp Order Button -->
+      <button onclick="orderViaWhatsAppDirect()" class="w-full py-2.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-900/60 text-xs font-bold transition-all flex items-center justify-center gap-2">
+        <span>💬</span>
+        <span>أو اطلبي فوراً عبر واتساب</span>
       </button>
+
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- QUICK VIEW & CUSTOMIZER MODAL                                -->
+  <!-- QUICK VIEW MODAL (NO PRICE)                                  -->
   <!-- ============================================================ -->
   <div id="quick-view-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden items-center justify-center p-4">
-    <div class="glass-panel w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-y-auto border border-[#c5a059]/25 p-6 sm:p-8 relative">
+    <div class="glass-panel w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-y-auto border border-[#c5a059]/25 p-5 sm:p-8 relative">
       
       <button onclick="closeQuickView()" class="absolute top-4 left-4 rtl:left-auto rtl:right-4 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">✕</button>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
         <!-- Main Image -->
-        <div class="aspect-square rounded-2xl overflow-hidden bg-neutral-900/60 p-4 flex items-center justify-center border border-white/10">
+        <div class="aspect-square rounded-2xl overflow-hidden bg-neutral-900/60 p-3 flex items-center justify-center border border-white/10">
           <img id="qv-main-image" src="" alt="Product View" class="w-full h-full object-cover rounded-xl" />
         </div>
 
         <!-- Product Details -->
-        <div class="space-y-4 text-start">
+        <div class="space-y-3.5 text-start">
           <span id="qv-category" class="text-xs uppercase tracking-widest text-[#dfba89] font-mono font-bold"></span>
-          <h2 id="qv-title" class="text-2xl sm:text-3xl font-bold font-editorial text-white"></h2>
-          <p id="qv-price" class="text-2xl font-bold font-editorial text-[#dfba89]"></p>
-          <p id="qv-desc" class="text-xs sm:text-sm text-gray-300/90 leading-relaxed font-light"></p>
+          <h2 id="qv-title" class="text-xl sm:text-2xl font-bold font-editorial text-white"></h2>
+          <p id="qv-desc" class="text-xs sm:text-sm text-gray-300 leading-relaxed font-light"></p>
 
           <!-- Specifications -->
-          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.08] grid grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] grid grid-cols-2 gap-2.5 text-xs">
             <div>
               <span class="text-gray-400 block font-light">الخامات:</span>
               <span id="qv-material" class="font-semibold text-white"></span>
@@ -737,9 +654,9 @@
           </div>
 
           <!-- Add to cart CTA -->
-          <button id="qv-add-to-cart-btn" class="w-full py-4 rounded-xl bg-gold-gradient text-black font-extrabold text-sm uppercase tracking-widest hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_25px_rgba(197,160,89,0.3)]">
+          <button id="qv-add-to-cart-btn" class="w-full py-3.5 rounded-xl bg-gold-gradient text-black font-extrabold text-xs uppercase hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(197,160,89,0.25)]">
             <span>+</span>
-            <span data-i18n="btnAddToBag">أضيفي إلى الحقيبة</span>
+            <span data-i18n="btnAddToBag">طلب الشنطة</span>
           </button>
         </div>
       </div>
@@ -751,18 +668,24 @@
   <!-- CHECKOUT SUCCESS MODAL                                       -->
   <!-- ============================================================ -->
   <div id="checkout-success-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden items-center justify-center p-4">
-    <div class="glass-panel w-full max-w-md rounded-3xl border border-[#c5a059]/30 p-8 text-center space-y-5 shadow-2xl">
-      <span class="text-5xl block">✨</span>
-      <h3 class="text-2xl font-bold font-editorial text-white" data-i18n="checkoutSuccessTitle">تم استلام طلبكِ الراقي بنجاح!</h3>
+    <div class="glass-panel w-full max-w-md rounded-3xl border border-[#c5a059]/30 p-7 text-center space-y-4 shadow-2xl">
+      <span class="text-5xl block">🎉</span>
+      <h3 class="text-xl font-bold font-editorial text-white" data-i18n="checkoutSuccessTitle">تم تسجيل طلبكِ بنجاح!</h3>
       <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-light" data-i18n="checkoutSuccessDesc">
-        شكراً لثقتكِ بـ متجر أحلام (Ahlam Store). سنقوم بتجهيز حقيبتكِ وتغليفها بصندوق الهدايا الحصري مع ختم الحرف اليدوية.
+        شكراً لاختياركِ Ahlam Store. سنتواصل معكِ هاتفياً لتأكيد موعد الشحن والتوصيل مع حق المعاينة قبل الدفع.
       </p>
-      <div class="p-3 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-mono text-[#dfba89]">
-        Order Reference: #AHLAM-98421-LUXE
+      <div id="order-success-details" class="p-3 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-[#dfba89] font-mono">
+        <!-- Populated by JS -->
       </div>
-      <button onclick="closeCheckoutSuccess()" class="w-full py-3.5 rounded-xl bg-gold-gradient text-black font-extrabold text-xs uppercase tracking-widest hover:opacity-95">
-        العودة للتسوق
-      </button>
+      <div class="flex flex-col gap-2 pt-2">
+        <a id="btn-success-whatsapp" href="#" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all">
+          <span>💬</span>
+          <span>متابعة تفاصيل الطلب عبر واتساب</span>
+        </a>
+        <button onclick="closeCheckoutSuccess()" class="w-full py-2.5 rounded-xl border border-white/15 text-gray-300 hover:text-white text-xs font-semibold">
+          العودة للتسوق
+        </button>
+      </div>
     </div>
   </div>
 
