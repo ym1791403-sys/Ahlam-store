@@ -205,6 +205,17 @@ const I18N = {
   }
 };
 
+// Helper: Sanitize strings to prevent XSS (Cross-Site Scripting)
+function escapeHTML(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // Helper: Format Currency
 function formatMoney(amountUSD) {
   const curr = STORE_DATA.currencies[AppState.currency] || STORE_DATA.currencies.USD;
@@ -814,7 +825,9 @@ function setMonogramFoil(foilType) {
 }
 
 function onMonogramInputChange(val) {
-  AppState.monogramText = val.slice(0, 4);
+  // Input validation & sanitization: only allow alphanumeric, Arabic letters, dots and spaces
+  const sanitized = val.replace(/[^a-zA-Z0-9\u0600-\u06FF\s.-]/g, '').slice(0, 4);
+  AppState.monogramText = sanitized;
   updateMonogramPreview();
 }
 
@@ -903,7 +916,7 @@ function renderCart() {
           <p class="text-xs text-gray-400 mb-1">${t('colorLabel')} ${colorLabel}</p>
           ${item.monogram ? `
             <span class="inline-block px-2 py-0.5 rounded text-[10px] bg-white/10 text-amber-300 font-semibold mb-1">
-              Monogram: ${item.monogram} (${item.foil})
+              Monogram: ${escapeHTML(item.monogram)} (${escapeHTML(item.foil)})
             </span>
           ` : ''}
           <p class="text-xs font-bold text-accent-glow">${formatMoney(prod.priceUSD)}</p>
@@ -956,7 +969,7 @@ function updateCartTotals(subtotalUSD) {
 function applyPromoCode() {
   const input = document.getElementById('promo-code-input');
   if (!input) return;
-  const code = input.value.trim().toUpperCase();
+  const code = input.value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
   if (code === 'VIBE20') {
     AppState.discountPercent = 20;
     alert(AppState.lang === 'ar' ? '🎉 تم تفعيل خصم 20% بنجاح!' : '🎉 20% Discount code applied!');
