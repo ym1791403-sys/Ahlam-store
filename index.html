@@ -6,7 +6,61 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>متجر أحلام | Ahlam Store - حقائب نسائية راقية</title>
+  <meta name="description" content="براند مصري راقٍ لأفخم الحقائب النسائية الجلدية المصنوعة يدوياً بمواصفات ملكية • عايني الشنطة بنفسك قبل الاستلام والدفع • شحن سريع لكافة محافظات مصر." />
+
+  <!-- Favicon for Google Search & Browsers -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="alternate icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   
+  <!-- Mobile & PWA App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#070709" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Ahlam Store" />
+  <meta name="application-name" content="Ahlam Store" />
+  <meta name="msapplication-TileColor" content="#070709" />
+
+  <!-- Open Graph / Facebook / WhatsApp Preview Card -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ym1791403-sys.github.io/Ahlam-store/" />
+  <meta property="og:title" content="متجر أحلام | Ahlam Store - تشكيلة الحقائب النسائية الفاخرة" />
+  <meta property="og:description" content="براند مصري راقٍ لأفخم الحقائب النسائية الجلدية المصنوعة يدوياً بمواصفات ملكية • عايني الشنطة بنفسك قبل الاستلام والدفع • شحن سريع لكافة محافظات مصر." />
+  <meta property="og:image" content="https://ym1791403-sys.github.io/Ahlam-store/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="متجر أحلام - أرقى الشنط الحريمي الفاخرة" />
+  <meta property="og:site_name" content="Ahlam Store | متجر أحلام" />
+  <meta property="og:locale" content="ar_EG" />
+
+  <!-- Twitter Card Preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="متجر أحلام | Ahlam Store - تشكيلة الحقائب النسائية الفاخرة" />
+  <meta name="twitter:description" content="براند مصري راقٍ لأفخم الحقائب النسائية الجلدية المصنوعة يدوياً بمواصفات ملكية • معاينة قبل الاستلام والدفع." />
+  <meta name="twitter:image" content="https://ym1791403-sys.github.io/Ahlam-store/assets/og-image.jpg" />
+
+  <!-- Google Rich Results / Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "متجر أحلام - Ahlam Store",
+    "alternateName": "Ahlam Store",
+    "url": "https://ym1791403-sys.github.io/Ahlam-store/",
+    "logo": "https://ym1791403-sys.github.io/Ahlam-store/assets/icon-512.png",
+    "image": "https://ym1791403-sys.github.io/Ahlam-store/assets/og-image.jpg",
+    "description": "براند مصري راقٍ لأفخم الحقائب النسائية الجلدية المصنوعة يدوياً بمواصفات ملكية مع ميزة المعاينة قبل الاستلام.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "EG",
+      "addressRegion": "Cairo"
+    },
+    "priceRange": "$$$"
+  }
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -38,14 +92,16 @@
   <header class="sticky top-0 z-50 backdrop-blur-2xl bg-[#070709]/90 border-b border-white/[0.08] transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Minimalist Luxury Logo -->
-      <a href="#" class="flex flex-col items-start group">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#c5a059] shadow-[0_0_10px_rgba(197,160,89,0.8)]"></span>
-          <span class="font-editorial text-2xl sm:text-3xl font-extrabold text-white group-hover:text-[#dfba89] transition-colors">AHLAM</span>
-          <span class="text-xs uppercase tracking-widest text-[#c5a059] font-semibold ms-1">STORE</span>
+      <!-- Minimalist Luxury Logo with Royal Emblem -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="assets/favicon.svg" alt="Ahlam Store Emblem" class="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.4)] group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col items-start">
+          <div class="flex items-center gap-1.5">
+            <span class="font-editorial text-2xl sm:text-3xl font-extrabold tracking-wider text-white group-hover:text-[#dfba89] transition-colors">AHLAM</span>
+            <span class="text-xs uppercase tracking-widest text-[#c5a059] font-semibold">STORE</span>
+          </div>
+          <span class="text-[10px] tracking-widest text-gray-400 font-mono -mt-0.5">مـتـجـر أحـلام • براند مصري فاخر</span>
         </div>
-        <span class="text-[10px] tracking-widest text-gray-400 font-mono -mt-0.5">براند مصري فاخر</span>
       </a>
 
       <!-- Desktop Nav Links -->
@@ -486,10 +542,13 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/[0.06]">
         
         <!-- Brand Info (6 cols) -->
-        <div class="md:col-span-6 space-y-3 text-start">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#c5a059]"></span>
-            <span class="font-editorial text-xl font-bold text-white">AHLAM STORE</span>
+        <div class="md:col-span-6 space-y-4 text-start">
+          <div class="flex items-center gap-3">
+            <img src="assets/favicon.svg" alt="Ahlam Store Emblem" class="w-11 h-11 object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.35)]" />
+            <div class="flex flex-col">
+              <span class="font-editorial text-xl font-bold text-white tracking-wider">AHLAM STORE</span>
+              <span class="text-[11px] text-[#c5a059] font-mono tracking-widest">مـتـجـر أحـلام • براند مصري راقٍ</span>
+            </div>
           </div>
           <p class="text-xs sm:text-sm leading-relaxed max-w-md text-gray-400 font-light" data-i18n="footerDesc">
             براند مصري راقٍ للحقائب الحريمي، نصنع كل قطعة بشغف واهتمام بأدق التفاصيل من الجلود الطبيعية الفاخرة لتكون رفيقتكِ الدائمة في كل إطلالة.

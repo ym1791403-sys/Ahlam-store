@@ -107,7 +107,18 @@ document.addEventListener('DOMContentLoaded', () => {
   renderReviews();
   updateCartBadge();
   setupEventListeners();
+  registerServiceWorker();
 });
+
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch((err) => {
+        console.log('SW registration note:', err);
+      });
+    });
+  }
+}
 
 // ============================================================
 // RENDER LOOKBOOK & OUTFIT MATCHER
