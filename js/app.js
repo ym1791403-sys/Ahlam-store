@@ -278,7 +278,10 @@ function renderCatalog() {
           <!-- Hover Preview Overlay Button -->
           <div class="preview-overlay-btn absolute inset-0 flex items-center justify-center pointer-events-none">
             <span class="px-3.5 py-1.5 rounded-full bg-black/85 backdrop-blur-md border border-[#c5a059] text-white text-xs font-bold shadow-xl flex items-center gap-1.5">
-              <span>👁️</span>
+              <svg class="w-3.5 h-3.5 text-[#dfba89]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
               <span>معاينة الشنطة</span>
             </span>
           </div>
@@ -330,8 +333,11 @@ function renderCatalog() {
             <!-- Action buttons: 1. Preview Bag, 2. Add To Bag -->
             <div class="grid grid-cols-2 gap-2">
               <button onclick="openQuickView('${p.id}')"
-                class="py-2.5 px-2 rounded-xl border border-[#c5a059]/40 hover:border-[#c5a059] bg-white/[0.04] hover:bg-[#c5a059]/15 text-xs font-bold text-white transition-all text-center flex items-center justify-center gap-1">
-                <span>🔍</span>
+                class="py-2.5 px-2 rounded-xl border border-[#c5a059]/40 hover:border-[#c5a059] bg-white/[0.04] hover:bg-[#c5a059]/15 text-xs font-bold text-white transition-all text-center flex items-center justify-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#dfba89]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
                 <span>معاينة الشنطة</span>
               </button>
               <button onclick="addToCart('${p.id}', '${p.colors[0].name}'); triggerFlyAnimation(this);"
@@ -521,9 +527,16 @@ function renderCart() {
 
   if (AppState.cart.length === 0) {
     container.innerHTML = `
-      <div class="py-14 text-center text-gray-400">
-        <span class="text-4xl block mb-3">🛍️</span>
-        <p class="text-sm font-semibold">${t('cartEmpty')}</p>
+      <div class="py-14 text-center">
+        <div class="w-14 h-14 mx-auto mb-3.5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#c5a059]">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <p class="text-xs sm:text-sm font-semibold text-gray-300 mb-1">${t('cartEmpty')}</p>
+        <span class="text-[11px] text-gray-500 font-light">تصفحي المجموعة واختاري قطعتكِ المفضلة</span>
       </div>
     `;
     if (orderFormContainer) orderFormContainer.classList.add('hidden');

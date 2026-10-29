@@ -1,7 +1,7 @@
 // ============================================================
 // AHLAM STORE - SERVICE WORKER (PWA & OFFLINE EXPERIENCE)
 // ============================================================
-const CACHE_NAME = 'ahlam-store-cache-v2';
+const CACHE_NAME = 'ahlam-store-cache-v3';
 const PRECACHE_URLS = [
   './',
   './index.html',

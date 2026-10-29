@@ -273,9 +273,9 @@ def generate_og_image():
     
     # 3 Badges at the bottom
     badges = [
-        "🛡️ معاينة كاملة قبل الدفع",
-        "👜 جلود طبيعية مستوردة",
-        "🚚 توصيل لكافة محافظات مصر"
+        "✦ معاينة كاملة قبل الاستلام",
+        "✦ جلود طبيعية 100% فاخرة",
+        "✦ شحن سريع لكافة المحافظات"
     ]
     badge_y = 515
     badge_font = ImageFont.truetype(FONT_ARABIC, 17)
