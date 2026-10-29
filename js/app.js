@@ -7,8 +7,6 @@ const AppState = {
   wishlist: [],
   activeLookbookStyleId: 'streetwear',
   activeLookbookBagId: 'ahlam-cyber-baguette',
-  capacityBagId: 'ahlam-prism-luna',
-  capacitySelectedItems: ['phone', 'cardholder', 'lipstick', 'keys'],
   activeFilter: 'all',
   activeSort: 'featured',
   quickViewProduct: null,
@@ -23,7 +21,6 @@ const STORE_WHATSAPP_NUMBER = "201000000000";
 const I18N = {
   navLookbook: "منسق الإطلالات",
   navCollection: "المجموعة الحصرية",
-  navCapacity: "ماذا تكفي حقيبتك؟",
   navReviews: "آراء عميلاتنا",
   heroBadge: "براند مصري فاخر - تشكيلة كوتور 2026 الحصرية",
   heroTitle1: "ليست مجرد حقيبة..",
@@ -43,17 +40,6 @@ const I18N = {
   btnShopDuo: "اطلبي الحقيبة لتنسيق هذه الإطلالة",
   switchBagLabel: "جرّبي حقيبة أخرى مع هذا النمط:",
   
-  // Capacity Visualizer
-  capacityBadge: "ميزة 'إيه اللي هيكفّي جوة الشنطة؟'",
-  capacityTitle: "ستوديو السعة التفاعلي (Inside The Bag)",
-  capacitySubtitle: "اختاري حقيبتك، وضعي متعلقاتكِ اليومية بضغطة زر للتأكد من المقاس الفعلي قبل الطلب.",
-  selectBagToTest: "اختاري الموديل للتجربة:",
-  itemsToPack: "انقري لإضافة أو إزالة المتعلقات:",
-  capacityStatusComfort: "مساحة مريحة جداً ومثالية للحقيبة!",
-  capacityStatusFull: "الحقيبة ممتلئة تماماً ومتناسقة!",
-  capacityStatusOver: "تجاوزتِ السعة المريحة! ننصحكِ باختيار حقيبة مونوليث الأكبر حجماً.",
-  currentUsage: "السعة المستخدمة:",
-  
   // Catalog
   catalogBadge: "المجموعة الكاملة",
   catalogTitle: "أيقونات متجر أحلام للأزياء الراقية",
@@ -66,7 +52,7 @@ const I18N = {
   sortBy: "الترتيب حسب:",
   sortFeatured: "الأبرز",
   sortRating: "الأعلى تقييماً",
-  btnQuickView: "تفاصيل الشنطة",
+  btnQuickView: "معاينة الشنطة",
   btnAddToBag: "طلب الشنطة",
   colorLabel: "الألوان المتوفرة:",
   
@@ -102,7 +88,6 @@ function escapeHTML(str) {
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   renderLookbook();
-  renderCapacityTester();
   renderCatalog();
   renderReviews();
   updateCartBadge();
@@ -266,121 +251,6 @@ function animateCounter(element, target) {
 }
 
 // ============================================================
-// RENDER "WHAT FITS INSIDE?" CAPACITY VISUALIZER
-// ============================================================
-function renderCapacityTester() {
-  const currentBag = STORE_DATA.products.find(p => p.id === AppState.capacityBagId) || STORE_DATA.products[0];
-  const maxCap = currentBag.capacityLimit;
-
-  const usedCap = AppState.capacitySelectedItems.reduce((acc, itemId) => {
-    const item = STORE_DATA.capacityItems.find(i => i.id === itemId);
-    return acc + (item ? item.size : 0);
-  }, 0);
-
-  const percent = Math.min(Math.round((usedCap / maxCap) * 100), 120);
-
-  // Bag pills
-  const bagPills = document.getElementById('capacity-bag-pills');
-  if (bagPills) {
-    bagPills.innerHTML = STORE_DATA.products.map(p => {
-      const isSel = p.id === currentBag.id;
-      return `
-        <button onclick="selectCapacityBag('${p.id}')"
-          class="px-3.5 py-2 rounded-xl border text-xs font-semibold transition-all ${
-            isSel 
-              ? 'bg-gold-gradient text-black font-extrabold border-transparent shadow-sm' 
-              : 'bg-white/[0.03] border-white/10 text-gray-300 hover:border-[#c5a059]/40'
-          }">
-          ${p.nameAr}
-        </button>
-      `;
-    }).join('');
-  }
-
-  // Items grid
-  const itemsContainer = document.getElementById('capacity-items-grid');
-  if (itemsContainer) {
-    itemsContainer.innerHTML = STORE_DATA.capacityItems.map(item => {
-      const isPacked = AppState.capacitySelectedItems.includes(item.id);
-      return `
-        <button onclick="toggleCapacityItem('${item.id}')"
-          class="flex items-center justify-between p-2.5 rounded-xl border text-start transition-all ${
-            isPacked 
-              ? 'bg-white/[0.12] border-[#c5a059] text-white shadow-sm' 
-              : 'bg-black/30 border-white/5 text-gray-400 hover:border-white/20'
-          }">
-          <div class="flex items-center gap-2">
-            <span class="text-lg">${item.icon}</span>
-            <div>
-              <p class="text-xs font-semibold leading-tight">${item.nameAr}</p>
-            </div>
-          </div>
-          <span class="text-xs font-bold ${isPacked ? 'text-[#dfba89]' : 'text-gray-500'}">
-            ${isPacked ? '✓' : '+'}
-          </span>
-        </button>
-      `;
-    }).join('');
-  }
-
-  // Bag Visual
-  const bagImg = document.getElementById('capacity-bag-img');
-  if (bagImg) bagImg.src = currentBag.colors[0].image;
-  const bagName = document.getElementById('capacity-bag-name');
-  if (bagName) bagName.innerText = currentBag.nameAr;
-  const bagDimensions = document.getElementById('capacity-bag-dims');
-  if (bagDimensions) bagDimensions.innerText = `${currentBag.dimensions} • الوزن: ${currentBag.weight}`;
-
-  // Progress Bar & Status
-  const bar = document.getElementById('capacity-bar-fill');
-  const percentLabel = document.getElementById('capacity-percent-label');
-  const statusMsg = document.getElementById('capacity-status-msg');
-
-  if (bar) {
-    bar.style.width = `${Math.min(percent, 100)}%`;
-    if (percent > 100) {
-      bar.style.backgroundColor = '#ef4444';
-    } else if (percent > 85) {
-      bar.style.backgroundColor = '#f59e0b';
-    } else {
-      bar.style.backgroundColor = '#c5a059';
-    }
-  }
-
-  if (percentLabel) {
-    percentLabel.innerText = `${percent}% من سعة الحقيبة`;
-  }
-
-  if (statusMsg) {
-    if (percent > 100) {
-      statusMsg.className = 'text-xs text-red-400 font-semibold p-2.5 rounded-lg bg-red-950/40 border border-red-800/40';
-      statusMsg.innerText = t('capacityStatusOver');
-    } else if (percent >= 85) {
-      statusMsg.className = 'text-xs text-amber-300 font-semibold p-2.5 rounded-lg bg-amber-950/40 border border-amber-800/40';
-      statusMsg.innerText = t('capacityStatusFull');
-    } else {
-      statusMsg.className = 'text-xs text-emerald-400 font-semibold p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-800/40';
-      statusMsg.innerText = t('capacityStatusComfort');
-    }
-  }
-}
-
-function selectCapacityBag(bagId) {
-  AppState.capacityBagId = bagId;
-  renderCapacityTester();
-}
-
-function toggleCapacityItem(itemId) {
-  const index = AppState.capacitySelectedItems.indexOf(itemId);
-  if (index > -1) {
-    AppState.capacitySelectedItems.splice(index, 1);
-  } else {
-    AppState.capacitySelectedItems.push(itemId);
-  }
-  renderCapacityTester();
-}
-
-// ============================================================
 // RENDER PRODUCT CATALOG (NO PRICES)
 // ============================================================
 function renderCatalog() {
@@ -401,24 +271,32 @@ function renderCatalog() {
 
     return `
       <div class="product-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between group relative" data-product-id="${p.id}">
-        <!-- Image & Badge -->
-        <div class="relative product-image-container bg-neutral-900/50 aspect-[4/5] overflow-hidden">
+        <!-- Image & Badge (Clickable to preview) -->
+        <div class="relative product-image-container bg-neutral-900/50 aspect-[4/5] overflow-hidden cursor-pointer" onclick="openQuickView('${p.id}')">
           <img src="${p.colors[0].image}" alt="${p.nameAr}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" id="prod-img-${p.id}" />
           
+          <!-- Hover Preview Overlay Button -->
+          <div class="preview-overlay-btn absolute inset-0 flex items-center justify-center pointer-events-none">
+            <span class="px-3.5 py-1.5 rounded-full bg-black/85 backdrop-blur-md border border-[#c5a059] text-white text-xs font-bold shadow-xl flex items-center gap-1.5">
+              <span>👁️</span>
+              <span>معاينة الشنطة</span>
+            </span>
+          </div>
+
           <div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none">
             <span class="px-2.5 py-1 text-[10px] font-bold rounded-full bg-black/85 backdrop-blur-md text-[#dfba89] border border-[#c5a059]/30">
               ${p.badgeAr}
             </span>
-            <button onclick="toggleWishlist('${p.id}')" class="pointer-events-auto w-8 h-8 rounded-full bg-black/70 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:text-amber-300 transition-colors">
+            <button onclick="event.stopPropagation(); toggleWishlist('${p.id}');" class="pointer-events-auto w-8 h-8 rounded-full bg-black/70 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:text-amber-300 transition-colors">
               <span class="${isInWishlist ? 'text-amber-400 scale-110' : 'text-gray-300'}">♥</span>
             </button>
           </div>
 
           <!-- Color Swatches Float -->
-          <div class="absolute bottom-3 inset-x-3 flex items-center justify-center gap-2 p-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/10 w-fit mx-auto">
+          <div class="absolute bottom-3 inset-x-3 flex items-center justify-center gap-2 p-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/10 w-fit mx-auto pointer-events-auto" onclick="event.stopPropagation()">
             ${p.colors.map((c, idx) => `
               <button 
-                onclick="switchProductColorCard('${p.id}', ${idx})"
+                onclick="event.stopPropagation(); switchProductColorCard('${p.id}', ${idx})"
                 class="w-3.5 h-3.5 rounded-full border border-white/30 transition-transform hover:scale-125 focus:ring-2 focus:ring-[#c5a059]"
                 style="background-color: ${c.hex}"
                 title="${c.nameAr}">
@@ -427,7 +305,7 @@ function renderCatalog() {
           </div>
         </div>
 
-        <!-- Info Area (No Price) -->
+        <!-- Info Area (Clickable Title & Clear Buttons) -->
         <div class="p-5 flex flex-col flex-1 justify-between">
           <div>
             <div class="flex items-baseline justify-between mb-1.5">
@@ -439,7 +317,7 @@ function renderCatalog() {
               </div>
             </div>
 
-            <h3 class="text-base sm:text-lg font-bold font-editorial text-white mb-1.5 group-hover:text-[#dfba89] transition-colors">${p.nameAr}</h3>
+            <h3 onclick="openQuickView('${p.id}')" class="text-base sm:text-lg font-bold font-editorial text-white mb-1.5 hover:text-[#dfba89] cursor-pointer transition-colors">${p.nameAr}</h3>
             <p class="text-xs text-gray-400 line-clamp-2 mb-3 leading-relaxed font-light">${p.descriptionAr}</p>
           </div>
 
@@ -449,16 +327,17 @@ function renderCatalog() {
               <span class="text-[10px] text-[#dfba89] font-semibold px-2 py-0.5 rounded bg-white/[0.04] border border-[#c5a059]/30">جلد طبيعي فاخر</span>
             </div>
 
-            <!-- Action buttons -->
+            <!-- Action buttons: 1. Preview Bag, 2. Add To Bag -->
             <div class="grid grid-cols-2 gap-2">
               <button onclick="openQuickView('${p.id}')"
-                class="py-2.5 px-2 rounded-xl border border-white/15 hover:border-[#c5a059]/40 bg-white/[0.03] hover:bg-white/[0.08] text-xs font-semibold text-gray-200 transition-all text-center">
-                ${t('btnQuickView')}
+                class="py-2.5 px-2 rounded-xl border border-[#c5a059]/40 hover:border-[#c5a059] bg-white/[0.04] hover:bg-[#c5a059]/15 text-xs font-bold text-white transition-all text-center flex items-center justify-center gap-1">
+                <span>🔍</span>
+                <span>معاينة الشنطة</span>
               </button>
               <button onclick="addToCart('${p.id}', '${p.colors[0].name}'); triggerFlyAnimation(this);"
                 class="py-2.5 px-2 rounded-xl bg-gold-gradient text-black hover:opacity-95 text-xs font-extrabold transition-all text-center flex items-center justify-center gap-1 shadow-[0_2px_15px_rgba(197,160,89,0.2)]">
                 <span>+</span>
-                <span>${t('btnAddToBag')}</span>
+                <span>طلب الشنطة</span>
               </button>
             </div>
           </div>
@@ -496,7 +375,7 @@ function setCatalogSort(sortKey) {
 }
 
 // ============================================================
-// QUICK VIEW MODAL
+// QUICK VIEW MODAL (PREVIEW BAG SYSTEM)
 // ============================================================
 function openQuickView(productId) {
   const prod = STORE_DATA.products.find(p => p.id === productId);
@@ -504,28 +383,46 @@ function openQuickView(productId) {
   AppState.quickViewProduct = prod;
   AppState.selectedColorIndex = 0;
   renderQuickViewModal(prod);
-  document.getElementById('quick-view-modal').classList.remove('hidden');
-  document.getElementById('quick-view-modal').classList.add('flex');
+  const modal = document.getElementById('quick-view-modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 function closeQuickView() {
-  document.getElementById('quick-view-modal').classList.add('hidden');
-  document.getElementById('quick-view-modal').classList.remove('flex');
+  const modal = document.getElementById('quick-view-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 }
 
 function renderQuickViewModal(prod) {
-  const curColor = prod.colors[AppState.selectedColorIndex];
+  const curColor = prod.colors[AppState.selectedColorIndex] || prod.colors[0];
 
-  document.getElementById('qv-title').innerText = prod.nameAr;
-  document.getElementById('qv-category').innerText = prod.categoryAr;
-  document.getElementById('qv-desc').innerText = prod.descriptionAr;
-  document.getElementById('qv-material').innerText = prod.materialAr;
-  document.getElementById('qv-dims').innerText = prod.dimensions;
-  document.getElementById('qv-weight').innerText = prod.weight;
-  document.getElementById('qv-capacity').innerText = `${prod.capacityLimit} نقطة سعة`;
+  const titleEl = document.getElementById('qv-title');
+  if (titleEl) titleEl.innerText = prod.nameAr;
+  const catEl = document.getElementById('qv-category');
+  if (catEl) catEl.innerText = prod.categoryAr;
+  const descEl = document.getElementById('qv-desc');
+  if (descEl) descEl.innerText = prod.descriptionAr;
+  const matEl = document.getElementById('qv-material');
+  if (matEl) matEl.innerText = prod.materialAr;
+  const dimsEl = document.getElementById('qv-dims');
+  if (dimsEl) dimsEl.innerText = prod.dimensions;
+  const weightEl = document.getElementById('qv-weight');
+  if (weightEl) weightEl.innerText = prod.weight;
 
   const mainImg = document.getElementById('qv-main-image');
   if (mainImg) mainImg.src = curColor.image;
+
+  // Direct WhatsApp inquiry link for this specific bag
+  const waBtn = document.getElementById('qv-whatsapp-btn');
+  if (waBtn) {
+    const waMsg = `مرحباً متجر أحلام، أود الاستفسار ومعاينة حقيبة (${prod.nameAr}) لون (${curColor.nameAr}).`;
+    waBtn.href = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encodeURIComponent(waMsg)}`;
+  }
 
   // Color Swatches
   const colorContainer = document.getElementById('qv-colors-list');
@@ -534,7 +431,7 @@ function renderQuickViewModal(prod) {
       <button onclick="setQuickViewColor(${idx})"
         class="flex items-center gap-2 px-3 py-1.5 rounded-xl border transition-all ${
           idx === AppState.selectedColorIndex 
-            ? 'border-[#c5a059] bg-white/[0.1] text-white font-bold' 
+            ? 'border-[#c5a059] bg-white/[0.12] text-white font-bold shadow-sm' 
             : 'border-white/10 bg-white/[0.04] text-gray-400 hover:border-white/20'
         }">
         <span class="w-3.5 h-3.5 rounded-full" style="background-color: ${c.hex}"></span>
@@ -562,7 +459,7 @@ function setQuickViewColor(idx) {
 }
 
 // ============================================================
-// CART & EGYPTIAN ORDER SYSTEM
+// CART & EGYPTIAN ORDER SYSTEM (FOOLPROOF ACTIVE TRANSITIONS)
 // ============================================================
 function addToCart(productId, colorName) {
   const prod = STORE_DATA.products.find(p => p.id === productId);
@@ -650,7 +547,7 @@ function renderCart() {
         </div>
 
         <div class="flex flex-col items-end gap-2">
-          <button onclick="removeFromCart(${idx})" class="text-gray-400 hover:text-red-400 text-xs">✕</button>
+          <button onclick="removeFromCart(${idx})" class="text-gray-400 hover:text-red-400 text-xs p-1">✕</button>
           <div class="flex items-center border border-white/10 rounded-lg overflow-hidden bg-black/40">
             <button onclick="changeCartQty(${idx}, -1)" class="px-2 py-0.5 text-xs text-gray-300 hover:bg-white/10">-</button>
             <span class="px-2 text-xs font-bold text-white">${item.qty}</span>
@@ -666,8 +563,9 @@ function openCartDrawer() {
   const drawer = document.getElementById('cart-drawer');
   const backdrop = document.getElementById('cart-backdrop');
   if (drawer && backdrop) {
-    drawer.classList.remove('-translate-x-full');
-    backdrop.classList.remove('hidden');
+    drawer.classList.add('active');
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
     AppState.isCartOpen = true;
   }
 }
@@ -676,8 +574,9 @@ function closeCartDrawer() {
   const drawer = document.getElementById('cart-drawer');
   const backdrop = document.getElementById('cart-backdrop');
   if (drawer && backdrop) {
-    drawer.classList.add('-translate-x-full');
-    backdrop.classList.add('hidden');
+    drawer.classList.remove('active');
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
     AppState.isCartOpen = false;
   }
 }
@@ -730,8 +629,11 @@ function submitOrderForm() {
   }
 
   closeCartDrawer();
-  document.getElementById('checkout-success-modal').classList.remove('hidden');
-  document.getElementById('checkout-success-modal').classList.add('flex');
+  const successModal = document.getElementById('checkout-success-modal');
+  if (successModal) {
+    successModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
   AppState.cart = [];
   updateCartBadge();
@@ -758,8 +660,11 @@ function orderViaWhatsAppDirect() {
 }
 
 function closeCheckoutSuccess() {
-  document.getElementById('checkout-success-modal').classList.add('hidden');
-  document.getElementById('checkout-success-modal').classList.remove('flex');
+  const modal = document.getElementById('checkout-success-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 }
 
 // ============================================================
@@ -831,4 +736,13 @@ function setupEventListeners() {
   if (mobileBtn) {
     mobileBtn.addEventListener('click', toggleMobileMenu);
   }
+
+  // Keyboard accessibility: Close modals/drawer with Escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeQuickView();
+      closeCartDrawer();
+      closeCheckoutSuccess();
+    }
+  });
 }
