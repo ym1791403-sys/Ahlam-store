@@ -35,7 +35,7 @@ const STORE_DATA = {
       dimensions: "26cm x 15cm x 7cm",
       weight: "480g",
       colors: [
-        { name: "Solar Tangerine", nameAr: "برتقالي شمسي", hex: "#ff5e14", image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" },
+        { name: "Cognac Amber", nameAr: "عنبري كونياك فاخر", hex: "#c5a059", image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" },
         { name: "Liquid Chrome", nameAr: "كروم سائل فضي", hex: "#d1d5db", image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=80" },
         { name: "Obsidian Noir", nameAr: "أسود بركاني فاخر", hex: "#111827", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80" }
       ],
@@ -61,9 +61,9 @@ const STORE_DATA = {
       dimensions: "28cm x 13cm x 5cm",
       weight: "410g",
       colors: [
-        { name: "Cyber Lilac", nameAr: "ليلكي مستقبلي", hex: "#9d4edd", image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=900&q=80" },
-        { name: "Gloss Noir", nameAr: "أسود لامع", hex: "#0a0a0c", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=80" },
-        { name: "Lime Glow", nameAr: "أخضر فوسفوري نيون", hex: "#a3e635", image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" }
+        { name: "Cyber Lilac", nameAr: "ليلكي حريري", hex: "#a78bfa", image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=900&q=80" },
+        { name: "Gloss Noir", nameAr: "أسود ملكي لامع", hex: "#0a0a0c", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=80" },
+        { name: "Champagne Silk", nameAr: "حرير الشامبين", hex: "#dfba89", image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" }
       ],
       descriptionEn: "A 90s cult classic re-engineered for the digital age. Compact, razor-sharp edge with a featherweight shoulder strap that stays comfortably anchored.",
       descriptionAr: "إعادة إحياء لأيقونة التسعينيات برؤية رقمية مستقبلية حادة. خفيفة على الكتف وتمنحكِ مظهراً مفعماً بالثقة والانطلاق.",
@@ -176,12 +176,12 @@ const STORE_DATA = {
   lookbookStyles: [
     {
       id: "streetwear",
-      name: "Urban Hyper-Street",
-      nameAr: "ستريت ستايل عصري وجريء",
-      taglineEn: "Deconstructed layers, sharp metal contrasts, and effortless city rhythm.",
-      taglineAr: "طبقات متحررة، تباين معدني حاد، ونبض شوارع العواصم النابض بالحياة.",
+      name: "Noir City Streets",
+      nameAr: "المشهد الأول: شوارع نوار العصرية",
+      taglineEn: "Deconstructed layers, slate charcoal tones, and sharp sculptural metal accents.",
+      taglineAr: "طبقات متحررة، درجات الفحم الأردوازي، وتفاصيل معدنية مصقولة بأناقة عواصم الموضة.",
       modelImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
-      palette: ["#ff5e14", "#0f172a", "#a3e635"],
+      palette: ["#c5a059", "#0f172a", "#d1d5db"],
       outfitPiecesEn: [
         "Oversized Deconstructed Trench in Slate Gray",
         "Chunky Platform Sculptural Lug-Boots",
@@ -199,12 +199,12 @@ const STORE_DATA = {
     },
     {
       id: "midnight_gala",
-      name: "Midnight Avant-Gala",
-      nameAr: "سهرة راقية وفاخرة (Avant-Gala)",
-      taglineEn: "Architectural luxury replacing conventional jewelry with pure form.",
-      taglineAr: "فخامة معمارية تعوض المجوهرات التقليدية بخطوط هندسية ساحرة.",
+      name: "Midnight Black-Tie Gala",
+      nameAr: "المشهد الثاني: سهرة السجادة الحمراء",
+      taglineEn: "Architectural luxury replacing conventional jewelry with pure form and fluid satin.",
+      taglineAr: "فخامة معمارية تعوض المجوهرات التقليدية بخطوط هندسية ساحرة وأقمشة الساتان الملكي.",
       modelImage: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80",
-      palette: ["#0f172a", "#d1d5db", "#047857"],
+      palette: ["#0f172a", "#d1d5db", "#c5a059"],
       outfitPiecesEn: [
         "Draped Floor-Length Satin Column Gown in Noir",
         "Minimalist Razor-Thin Stiletto Heels",
@@ -222,12 +222,12 @@ const STORE_DATA = {
     },
     {
       id: "power_tailoring",
-      name: "Neo-Power Executive",
-      nameAr: "إطلالة عمل قيادية وأنيقة",
-      taglineEn: "Reinvented corporate authority with razor precision and tactile opulence.",
-      taglineAr: "أناقة بيزنس بروح قيادية متجددة، تجمع الدقة الهندسية مع نعومة خامات الجلد.",
+      name: "Executive Couture",
+      nameAr: "المشهد الثالث: كوتور الإدارة والقيادة",
+      taglineEn: "Reinvented corporate authority with razor precision and tactile opulent leather.",
+      taglineAr: "حضور مهيب يجمع الدقة الهندسية للبدلات مع نعومة أفخم الجلود الإيطالية.",
       modelImage: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=900&q=80",
-      palette: ["#1f2937", "#f3f4f6", "#ea580c"],
+      palette: ["#1f2937", "#f3f4f6", "#c5a059"],
       outfitPiecesEn: [
         "Double-Breasted Hourglass Wool Blazer",
         "Wide-Leg Pleated Tailored Trousers",
@@ -245,12 +245,12 @@ const STORE_DATA = {
     },
     {
       id: "resort_brunch",
-      name: "Sun-Drenched High Chic",
-      nameAr: "كاجوال راقي وفسحات صيفية",
-      taglineEn: "Warm golden hues, airy organic textures, and sculptural sunset attitude.",
-      taglineAr: "ألوان مشمسة دافئة، خامات كتان خفيفة، وإحساس مفعم بحرية غروب الشمس.",
+      name: "Riviera Sunset",
+      nameAr: "المشهد الرابع: غروب شمس الريفيرا",
+      taglineEn: "Warm golden hues, airy organic textures, and cinematic sunset attitude.",
+      taglineAr: "درجات دافئة مشمسة وتناغم ناعم مع أقمشة الكتان والحرير الفاخرة.",
       modelImage: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
-      palette: ["#f97316", "#fef3c7", "#047857"],
+      palette: ["#c5a059", "#fef3c7", "#047857"],
       outfitPiecesEn: [
         "Raw Silk Halter Top with Open Back",
         "Breezy Sand-Hued Tailored Linen Culottes",

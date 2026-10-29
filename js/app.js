@@ -5,7 +5,7 @@
 const AppState = {
   lang: 'ar', // default to Arabic as requested
   currency: 'SAR',
-  theme: 'tangerine',
+  theme: 'gold',
   cart: [],
   wishlist: [],
   activeLookbookStyleId: 'streetwear',
@@ -324,10 +324,10 @@ function renderLookbook() {
       const title = AppState.lang === 'ar' ? s.nameAr : s.name;
       return `
         <button onclick="selectLookbookStyle('${s.id}')"
-          class="px-5 py-3 rounded-xl border text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
+          class="px-5 py-2.5 rounded-xl border text-xs tracking-wider uppercase font-bold transition-all duration-300 flex items-center gap-2 ${
             isActive 
-              ? 'bg-accent-solid text-black border-transparent shadow-lg shadow-orange-500/20 font-bold scale-105' 
-              : 'border-white/10 hover:border-white/30 text-gray-300 bg-white/5'
+              ? 'bg-gold-gradient text-black border-transparent shadow-lg shadow-amber-500/10 font-extrabold scale-105' 
+              : 'border-white/10 hover:border-[#c5a059]/40 text-gray-300 bg-white/[0.03]'
           }">
           <span>✦</span>
           <span>${title}</span>
@@ -494,10 +494,10 @@ function renderCapacityTester() {
       const title = AppState.lang === 'ar' ? p.nameAr : p.name;
       return `
         <button onclick="selectCapacityBag('${p.id}')"
-          class="px-4 py-2.5 rounded-xl border text-xs font-semibold transition-all ${
+          class="px-4 py-2 rounded-xl border text-xs font-semibold transition-all ${
             isSel 
-              ? 'bg-accent-solid text-black font-bold border-transparent shadow-lg' 
-              : 'bg-white/5 border-white/10 text-gray-300 hover:border-white/30'
+              ? 'bg-gold-gradient text-black font-extrabold border-transparent shadow-md' 
+              : 'bg-white/[0.03] border-white/10 text-gray-300 hover:border-[#c5a059]/40'
           }">
           ${title} (${p.capacityLimit} pts)
         </button>
@@ -631,20 +631,20 @@ function renderCatalog() {
           <img src="${p.colors[0].image}" alt="${name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" id="prod-img-${p.id}" />
           
           <div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none">
-            <span class="px-3 py-1 text-[11px] font-bold rounded-full bg-black/75 backdrop-blur-md text-white border border-white/10 uppercase tracking-wider">
+            <span class="px-3 py-1 text-[10px] font-bold tracking-widest rounded-full bg-black/85 backdrop-blur-md text-[#dfba89] border border-[#c5a059]/30 uppercase">
               ${badge}
             </span>
-            <button onclick="toggleWishlist('${p.id}')" class="pointer-events-auto w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:text-red-400 transition-colors">
-              <span class="${isInWishlist ? 'text-red-500 scale-110' : 'text-gray-300'}">♥</span>
+            <button onclick="toggleWishlist('${p.id}')" class="pointer-events-auto w-9 h-9 rounded-full bg-black/70 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:text-amber-300 transition-colors">
+              <span class="${isInWishlist ? 'text-amber-400 scale-110' : 'text-gray-300'}">♥</span>
             </button>
           </div>
 
           <!-- Color Swatches Float -->
-          <div class="absolute bottom-3 inset-x-3 flex items-center justify-center gap-2 p-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 w-fit mx-auto">
+          <div class="absolute bottom-3 inset-x-3 flex items-center justify-center gap-2 p-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/10 w-fit mx-auto">
             ${p.colors.map((c, idx) => `
               <button 
                 onclick="switchProductColorCard('${p.id}', ${idx})"
-                class="w-4 h-4 rounded-full border border-white/30 transition-transform hover:scale-125 focus:ring-2 focus:ring-white"
+                class="w-3.5 h-3.5 rounded-full border border-white/30 transition-transform hover:scale-125 focus:ring-2 focus:ring-[#c5a059]"
                 style="background-color: ${c.hex}"
                 title="${AppState.lang === 'ar' ? c.nameAr : c.name}">
               </button>
@@ -653,38 +653,38 @@ function renderCatalog() {
         </div>
 
         <!-- Info Area -->
-        <div class="p-5 flex flex-col flex-1 justify-between">
+        <div class="p-6 flex flex-col flex-1 justify-between">
           <div>
-            <div class="flex items-baseline justify-between mb-1.5">
-              <span class="text-xs uppercase tracking-wider text-gray-400">${AppState.lang === 'ar' ? p.categoryAr : p.category}</span>
-              <div class="flex items-center gap-1 text-xs text-amber-400">
+            <div class="flex items-baseline justify-between mb-2">
+              <span class="text-[11px] uppercase tracking-widest text-gray-400 font-mono">${AppState.lang === 'ar' ? p.categoryAr : p.category}</span>
+              <div class="flex items-center gap-1 text-xs text-[#dfba89]">
                 <span>★</span>
                 <span>${p.rating}</span>
                 <span class="text-gray-500">(${p.reviewsCount})</span>
               </div>
             </div>
 
-            <h3 class="text-lg font-bold font-editorial text-white mb-1.5 group-hover:text-accent-glow transition-colors">${name}</h3>
-            <p class="text-xs text-gray-400 line-clamp-2 mb-4 leading-relaxed">${desc}</p>
+            <h3 class="text-lg font-bold font-editorial text-white mb-2 group-hover:text-[#dfba89] transition-colors">${name}</h3>
+            <p class="text-xs text-gray-400 line-clamp-2 mb-4 leading-relaxed font-light">${desc}</p>
           </div>
 
           <div>
-            <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center justify-between mb-4 border-t border-white/[0.06] pt-3">
               <div>
                 <span class="text-xl font-bold font-editorial text-white">${formatMoney(p.priceUSD)}</span>
                 <span class="text-xs text-gray-500 line-through ms-2">${formatMoney(p.originalPriceUSD)}</span>
               </div>
-              <span class="text-[11px] text-accent-glow font-medium">100% Italian Leather</span>
+              <span class="text-[10px] text-[#dfba89] font-mono tracking-widest">ITALIAN LEATHER</span>
             </div>
 
             <!-- Action buttons -->
             <div class="grid grid-cols-2 gap-2">
               <button onclick="openQuickView('${p.id}')"
-                class="py-2.5 px-3 rounded-xl border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 text-xs font-semibold text-gray-200 transition-all text-center">
+                class="py-2.5 px-3 rounded-xl border border-white/15 hover:border-[#c5a059]/40 bg-white/[0.03] hover:bg-white/[0.08] text-xs font-semibold text-gray-200 transition-all text-center">
                 ${t('btnQuickView')}
               </button>
               <button onclick="addToCart('${p.id}', '${p.colors[0].name}'); triggerFlyAnimation(this);"
-                class="py-2.5 px-3 rounded-xl bg-accent-solid text-black hover:opacity-90 text-xs font-bold transition-all text-center flex items-center justify-center gap-1.5">
+                class="py-2.5 px-3 rounded-xl bg-gold-gradient text-black hover:opacity-95 text-xs font-extrabold transition-all text-center flex items-center justify-center gap-1.5 shadow-[0_2px_15px_rgba(197,160,89,0.2)]">
                 <span>+</span>
                 <span>${t('btnAddToBag')}</span>
               </button>
@@ -709,10 +709,10 @@ function setCatalogFilter(filterKey) {
   AppState.activeFilter = filterKey;
   document.querySelectorAll('[data-filter-btn]').forEach(btn => {
     const isAct = btn.dataset.filterBtn === filterKey;
-    btn.classList.toggle('bg-accent-solid', isAct);
+    btn.classList.toggle('bg-gold-gradient', isAct);
     btn.classList.toggle('text-black', isAct);
-    btn.classList.toggle('font-bold', isAct);
-    btn.classList.toggle('bg-white/5', !isAct);
+    btn.classList.toggle('font-extrabold', isAct);
+    btn.classList.toggle('bg-white/[0.04]', !isAct);
     btn.classList.toggle('text-gray-300', !isAct);
   });
   renderCatalog();
