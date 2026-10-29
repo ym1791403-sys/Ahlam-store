@@ -1,8 +1,8 @@
-// VÉRA STUDIO - Global Fashion & Bags Store Data
+// Ahlam Store - Global Fashion & Bags Store Data
 const STORE_DATA = {
   brand: {
-    name: "VÉRA STUDIO",
-    nameAr: "ڤيرا ستوديو",
+    name: "Ahlam Store",
+    nameAr: "متجر أحلام (Ahlam Store)",
     sloganEn: "CONTEMPORARY AVANT-GARDE LEATHERWEAR",
     sloganAr: "تصاميم جلدية عصرية تُعيد صياغة حضوركِ",
     taglineEn: "Not just a bag. An architectural statement for the modern icon.",
@@ -18,7 +18,7 @@ const STORE_DATA = {
 
   products: [
     {
-      id: "vera-prism-luna",
+      id: "ahlam-prism-luna",
       name: "The Prism Luna Crescent",
       nameAr: "حقيبة لونا المنشورية",
       priceUSD: 340,
@@ -44,7 +44,7 @@ const STORE_DATA = {
       lookbookTags: ["streetwear", "midnight_gala"]
     },
     {
-      id: "vera-cyber-baguette",
+      id: "ahlam-cyber-baguette",
       name: "The Cyber Baguette",
       nameAr: "حقيبة سايبر باجيت",
       priceUSD: 290,
@@ -70,7 +70,7 @@ const STORE_DATA = {
       lookbookTags: ["streetwear", "power_tailoring"]
     },
     {
-      id: "vera-quilted-monolith",
+      id: "ahlam-quilted-monolith",
       name: "The Quilted Monolith Maxi",
       nameAr: "حقيبة مونوليث ماكسي المبطنة",
       priceUSD: 420,
@@ -96,7 +96,7 @@ const STORE_DATA = {
       lookbookTags: ["power_tailoring", "streetwear"]
     },
     {
-      id: "vera-obsidian-hourglass",
+      id: "ahlam-obsidian-hourglass",
       name: "The Obsidian Hourglass",
       nameAr: "حقيبة أوبسيديان الزجاجية المعمارية",
       priceUSD: 380,
@@ -121,7 +121,7 @@ const STORE_DATA = {
       lookbookTags: ["midnight_gala"]
     },
     {
-      id: "vera-emerald-kinetic",
+      id: "ahlam-emerald-kinetic",
       name: "The Kinetic Mini Prism",
       nameAr: "حقيبة كينيتك مينى بريزم",
       priceUSD: 260,
@@ -147,7 +147,7 @@ const STORE_DATA = {
       lookbookTags: ["resort_brunch", "midnight_gala"]
     },
     {
-      id: "vera-solar-crescent",
+      id: "ahlam-solar-crescent",
       name: "The Solar Arch Shoulder Bag",
       nameAr: "حقيبة القوس الشمسي للكتف",
       priceUSD: 310,
@@ -192,7 +192,7 @@ const STORE_DATA = {
         "بوت ضخم بقاعدة هندسية بارزة",
         "نظارة شمسية رفيعة مستوحاة من المستقبل"
       ],
-      pairingBagId: "vera-cyber-baguette",
+      pairingBagId: "ahlam-cyber-baguette",
       matchScore: 98,
       stylingNoteEn: "The high-gloss patent finish delivers an electric reflective pop against matte heavy cotton trench coats.",
       stylingNoteAr: "البريق الفائق لجلد الورنيش يصنع تبايناً بصرياً مبهراً مع الأقمشة القطنية الثقيلة والمعاطف الفضفاضة."
@@ -215,7 +215,7 @@ const STORE_DATA = {
         "حذاء بكعب رفيع مينيمالي حاد",
         "أقراط أذن عصرية بتصميم بلاتيني هندسي"
       ],
-      pairingBagId: "vera-obsidian-hourglass",
+      pairingBagId: "ahlam-obsidian-hourglass",
       matchScore: 99,
       stylingNoteEn: "The flared asymmetric base creates a theatrical silhouette that looks sublime under ambient evening spotlighting.",
       stylingNoteAr: "القاعدة العريضة غير المتماثلة تخلق ظلاً مسرحياً ساحراً تحت إضاءات السهرة وحفلات العشاء الراقية."
@@ -238,7 +238,7 @@ const STORE_DATA = {
         "بنطلون قماش بقصة واسعة وثنيات أمامية أنيقة",
         "ساعة يد عريضة من البلاتين المصقول"
       ],
-      pairingBagId: "vera-quilted-monolith",
+      pairingBagId: "ahlam-quilted-monolith",
       matchScore: 97,
       stylingNoteEn: "Combines high boardroom utility with supreme plush softness, breaking stiff tailoring with effortless poise.",
       stylingNoteAr: "تجمع بين العملية الفائقة لاحتواء الأجهزة والملفات مع النعومة الفاخرة التي تكسر جمود بدلات العمل الرسمية."
@@ -261,7 +261,7 @@ const STORE_DATA = {
         "بنطلون كتان صيفي واسع بلون الرمال الناعمة",
         "نظارة شمسية كلاسيكية بنقشة التايجر الكهرمانية"
       ],
-      pairingBagId: "vera-solar-crescent",
+      pairingBagId: "ahlam-solar-crescent",
       matchScore: 99,
       stylingNoteEn: "The solar saffron curve captures sunlight in motion, elevating natural neutral linens into high-street art.",
       stylingNoteAr: "اللون البرتقالي الزعفراني يتناغم مع ضوء الشمس ويحول درجات الكتان الحيادية إلى لوحة فنية ساحرة."

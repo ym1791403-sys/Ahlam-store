@@ -1,4 +1,4 @@
-# Ahlam Store - VÉRA Bags Studio
+# Ahlam Store
 > متجر عصري وجريء للحقائب النسائية الفاخرة | Contemporary Avant-Garde Women's Bags E-Commerce
 
 ## ✨ المميزات الرئيسية (Key Features)

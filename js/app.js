@@ -1,5 +1,5 @@
 // ============================================================
-// VÉRA STUDIO - HIGH-FASHION INTERACTIVE APPLICATION ENGINE
+// AHLAM STORE - HIGH-FASHION INTERACTIVE APPLICATION ENGINE
 // ============================================================
 
 const AppState = {
@@ -9,14 +9,14 @@ const AppState = {
   cart: [],
   wishlist: [],
   activeLookbookStyleId: 'streetwear',
-  activeLookbookBagId: 'vera-cyber-baguette',
-  capacityBagId: 'vera-prism-luna',
+  activeLookbookBagId: 'ahlam-cyber-baguette',
+  capacityBagId: 'ahlam-prism-luna',
   capacitySelectedItems: ['phone', 'cardholder', 'lipstick', 'keys'],
   activeFilter: 'all',
   activeSort: 'featured',
   quickViewProduct: null,
   selectedColorIndex: 0,
-  monogramText: 'VS',
+  monogramText: 'AS',
   monogramFoil: 'gold',
   promoCode: '',
   discountPercent: 0,
@@ -44,7 +44,7 @@ const I18N = {
     // Lookbook Section
     lookbookBadge: "الميزة التفاعلية الحصرية",
     lookbookTitle: "مجلة الموضة ومنسّق الإطلالات الذكي",
-    lookbookSubtitle: "اختاري المناسبة أو نمط الملابس، وشاهدي كيف تكتمل إطلالتك بتناغم سينمائي مع حقائب ڤيرا.",
+    lookbookSubtitle: "اختاري المناسبة أو نمط الملابس، وشاهدي كيف تكتمل إطلالتك بتناغم سينمائي مع حقائب متجر أحلام (Ahlam Store).",
     matchLabel: "نسبة التناغم البصري",
     stylingAdviceTitle: "نصيحة خبيرة المظهر (Stylist Note):",
     outfitElementsTitle: "تفاصيل الإطلالة (Look Breakdown):",
@@ -64,7 +64,7 @@ const I18N = {
     
     // Catalog Section
     catalogBadge: "المجموعة الكاملة",
-    catalogTitle: "أيقونات ڤيرا للأزياء الراقية",
+    catalogTitle: "أيقونات متجر أحلام للأزياء الراقية (Ahlam Store)",
     filterAll: "الكل",
     filterCrossbody: "كروس بودي",
     filterShoulder: "حقائب كتف",
@@ -101,7 +101,7 @@ const I18N = {
     promoPlaceholder: "رمز الخصم (جرّبي VIBE20)",
     checkoutBtn: "إتمام الطلب بأمان",
     checkoutSuccessTitle: "تم استلام طلبكِ الراقي بنجاح!",
-    checkoutSuccessDesc: "شكراً لثقتكِ بـ VÉRA STUDIO. سنقوم بتجهيز حقيبتكِ وتغليفها بصندوق الهدايا الحصري مع ختم الحرف اليدوية.",
+    checkoutSuccessDesc: "شكراً لثقتكِ بـ متجر أحلام (Ahlam Store). سنقوم بتجهيز حقيبتكِ وتغليفها بصندوق الهدايا الحصري مع ختم الحرف اليدوية.",
     
     // Reviews
     reviewsBadge: "أيقونات الأناقة يتحدثن",
@@ -112,7 +112,7 @@ const I18N = {
     footerLinksTitle: "روابط سريعة",
     footerServicesTitle: "خدمات العملاء",
     footerSocialTitle: "تابعي أحدث العروض",
-    footerRights: "جميع الحقوق محفوظة © 2026 VÉRA STUDIO.",
+    footerRights: "جميع الحقوق محفوظة © 2026 Ahlam Store.",
     guaranteeText: "ضمان الجلد الطبيعي مدى الحياة • إرجاع مجاني خلال 14 يوماً • تغليف هدايا ملكي"
   },
   en: {
@@ -132,7 +132,7 @@ const I18N = {
     // Lookbook Section
     lookbookBadge: "Signature Interactive Experience",
     lookbookTitle: "Interactive Lookbook & Outfit Matcher",
-    lookbookSubtitle: "Select an aesthetic occasion and watch how VÉRA bags forge cinematic visual synergy with curated outfits.",
+    lookbookSubtitle: "Select an aesthetic occasion and watch how Ahlam Store bags forge cinematic visual synergy with curated outfits.",
     matchLabel: "Visual Synergy Score",
     stylingAdviceTitle: "Stylist Advice:",
     outfitElementsTitle: "Curated Look Breakdown:",
@@ -172,7 +172,7 @@ const I18N = {
     monogramBadge: "Personalized Luxury",
     monogramTitle: "Bespoke Monogramming Studio",
     monogramDesc: "Make it entirely yours. Complimentary foil stamping on our handcrafted leather luggage clochette.",
-    monogramInputPlaceholder: "Enter 2-3 initials (e.g. VS or LK)",
+    monogramInputPlaceholder: "Enter 2-3 initials (e.g. AS or LK)",
     foilGold: "Regal 24K Gold Foil",
     foilSilver: "Mirror Chrome Silver",
     foilDeboss: "Deep Blind Deboss",
@@ -189,7 +189,7 @@ const I18N = {
     promoPlaceholder: "Promo code (try VIBE20)",
     checkoutBtn: "Proceed to Secure Checkout",
     checkoutSuccessTitle: "Order Confirmed with Distinction!",
-    checkoutSuccessDesc: "Thank you for joining VÉRA STUDIO. Your piece is being hand-prepped, serialized, and encased in our signature luxury presentation box.",
+    checkoutSuccessDesc: "Thank you for joining Ahlam Store. Your piece is being hand-prepped, serialized, and encased in our signature luxury presentation box.",
     
     // Reviews
     reviewsBadge: "Voices of Style",
@@ -200,7 +200,7 @@ const I18N = {
     footerLinksTitle: "Navigation",
     footerServicesTitle: "Client Services",
     footerSocialTitle: "Join The Circle",
-    footerRights: "All Rights Reserved © 2026 VÉRA STUDIO.",
+    footerRights: "All Rights Reserved © 2026 Ahlam Store.",
     guaranteeText: "Lifetime Leather Warranty • Complimentary 14-Day Returns • Archival Gift Boxing"
   }
 };
@@ -801,7 +801,7 @@ function setQuickViewColor(idx) {
 function updateMonogramPreview() {
   const tagEl = document.getElementById('monogram-live-text');
   if (!tagEl) return;
-  const text = AppState.monogramText.trim().toUpperCase() || 'VS';
+  const text = AppState.monogramText.trim().toUpperCase() || 'AS';
   tagEl.innerText = text;
 
   // Apply foil class

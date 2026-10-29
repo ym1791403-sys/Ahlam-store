@@ -41,7 +41,7 @@ def run_server():
             with socketserver.TCPServer(("", attempt_port), SecureHTTPRequestHandler) as httpd:
                 url = f"http://localhost:{attempt_port}"
                 print("\n" + "="*50)
-                print(f"🔒 VÉRA STUDIO Secure Web Server Running!")
+                print(f"🔒 Ahlam Store Secure Web Server Running!")
                 print(f"🛡️  Security Headers & Path Boundary Protection Active")
                 print(f"🚀 Visit: {url}")
                 print("="*50 + "\n")

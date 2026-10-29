@@ -9,7 +9,7 @@ Only the latest release on the `main` branch is actively supported with security
 | < 1.0   | :x:                |
 
 ## Reporting a Vulnerability
-We take the security of VÉRA STUDIO / Ahlam Store very seriously.
+We take the security of Ahlam Store very seriously.
 
 If you believe you have discovered a vulnerability or security issue:
 1. **DO NOT** open a public issue or discuss it in public.
